@@ -1,0 +1,3 @@
+[submodule "laradock-sidemaya"]
+	path = laradock-sidemaya
+	url = https://github.com/ahaqqu/laradock-sidemaya.git
