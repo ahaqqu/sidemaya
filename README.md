@@ -10,11 +10,23 @@ Steps:
 - Start cmd at checkout location
     - `cd laradock-sidemaya/`
     - `docker-compose up -d nginx mysql`
-    - `docker-compose exec --user=laradock workspace bash`
 - Access http://127.0.0.1/
 
 
 ## Development
 
 ### Update laradock-sidemaya
-git submodule update --recursive --remote
+`git submodule update --recursive --remote`
+
+### Reload nginx
+From laradock-sidemaya
+`docker-compose exec nginx nginx -t`
+`docker-compose exec nginx nginx -s reload`
+
+### Go to workspace
+- Start cmd at checkout location
+    - `cd laradock-sidemaya/`
+    - `docker-compose exec --user=laradock workspace bash`
+
+### Create sidemaya-website
+From workspace `composer create-project laravel/laravel sidemaya-website`
