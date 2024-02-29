@@ -11,6 +11,7 @@ Steps:
     - `cd laradock-sidemaya/`
     - `docker-compose up -d nginx mysql`
     - `docker-compose exec --user=laradock workspace bash`
+- Access http://127.0.0.1/
 
 
 ## Development
