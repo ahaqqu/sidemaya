@@ -38,3 +38,10 @@ From workspace `composer create-project laravel/laravel sidemaya-website`
 
 ### Install libraries
 From workspace `composer require "spatie/laravel-medialibrary:^11.0.0"`
+
+### Install breeze
+From workspace 
+- `composer require laravel/breeze --dev`
+- `php artisan breeze:install`
+- `php artisan migrate`
+- 
