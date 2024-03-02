@@ -30,7 +30,7 @@ Route::middleware('auth')->group(function () {
 
 Route::get('/layanan-umum', function() {
     return view('layanan-umum');
-});
+})->name('layanan-umum');
 
 Route::post('/layanan-umum', 'App\Http\Controllers\UploadController@upload')->name('file.upload');
 
