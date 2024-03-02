@@ -21,5 +21,7 @@ Route::get('/layanan-umum', function() {
     return view('layanan-umum');
 });
 
+Route::post('/layanan-umum', 'App\Http\Controllers\UploadController@upload')->name('file.upload');
+
 Route::get('/download/{directory}/{filename}', 'App\Http\Controllers\DownloadController@download')->name('file.download');
 
