@@ -1,6 +1,11 @@
 # sidemaya
 Sistem Informasi Desa Manud Jaya
 
+## Features
+
+### Download layanan umum template
+http://127.0.0.1/layanan-umum
+
 ## Setup
 
 Steps:
@@ -30,3 +35,6 @@ From laradock-sidemaya
 
 ### Create sidemaya-website
 From workspace `composer create-project laravel/laravel sidemaya-website`
+
+### Install libraries
+From workspace `composer require "spatie/laravel-medialibrary:^11.0.0"`
