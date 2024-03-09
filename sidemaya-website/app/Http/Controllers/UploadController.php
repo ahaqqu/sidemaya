@@ -26,9 +26,11 @@ class UploadController extends Controller
             // Optionally, you can save file details to the database here
             // For example, you can save the file name, path, user ID, etc.
 
-            return redirect()->back()->with('success', 'File uploaded successfully.');
+            $type = str_replace('-', ' ', $doctype);
+
+            return redirect()->back()->with('success', "Dokumen ${type} sukses diunggah.");
         } else {
-            return redirect()->back()->with('error', 'File upload failed.');
+            return redirect()->back()->with('error', 'Dokumen gagal diunggah. Sistem hanya mendukung tipe dokumen: doc, docx, dan pdf');
         }
     }
 }
