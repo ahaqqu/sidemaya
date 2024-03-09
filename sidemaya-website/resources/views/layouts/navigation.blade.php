@@ -12,9 +12,11 @@
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    @auth
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
+                    @endauth
                     <x-nav-link :href="route('layanan-umum')" :active="request()->routeIs('layanan-umum')">
                         {{ __('Layanan Umum') }}
                     </x-nav-link>
@@ -105,7 +107,6 @@
                     <!-- Authentication -->
                     <form method="POST" action="{{ route('logout') }}">
                         @csrf
-
                         <x-responsive-nav-link :href="route('logout')"
                                 onclick="event.preventDefault();
                                             this.closest('form').submit();">
