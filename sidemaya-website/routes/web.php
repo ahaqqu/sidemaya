@@ -18,11 +18,6 @@ Route::get('/', function () {
     return view('welcome');
 })->name('home');
 
-
-//Route::get('/dashboard', function () {
-//   return view('dashboard');
-//})->middleware(['auth', 'verified'])->name('dashboard');
-
 Route::get('/dashboard', 'App\Http\Controllers\DashboardController@index')->middleware(['auth', 'verified'])->name('dashboard');
 Route::get('/document/files/{directory}/{type}/{filename}', 'App\Http\Controllers\DocumentController@download')->name('document.download');
 

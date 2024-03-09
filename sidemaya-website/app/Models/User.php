@@ -42,4 +42,10 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    //TODO https://www.appfinz.com/blogs/laravel-middleware-for-auth-admin-users-roles/
+    public function isAdmin(): bool
+    {
+        return ($this->email === 'angga.haqqu@gmail.com') || (str_contains($this->email, '@ui.ac.id'));
+    }
 }

@@ -50,6 +50,7 @@
                             </div>
                             </div>
 
+                            @auth
                             <div class="mt-4">
                                 <form action="{{ route('file.upload') }}" method="POST" enctype="multipart/form-data">
                                     @csrf
@@ -61,8 +62,8 @@
                                     </x-primary-button>
                                 </form>
                             </div>
+                            @endauth
                         </div>
-                        <br>
                 </div>
             </div>
         </div>
@@ -84,7 +85,7 @@
                             <div class="section-content">
                             </div>
                             </div>
-
+                            @auth
                             <div class="mt-4">
                                 <form action="{{ route('file.upload') }}" method="POST" enctype="multipart/form-data">
                                     @csrf
@@ -96,6 +97,7 @@
                                         </x-primary-button>
                                 </form>
                             </div>
+                            @endauth
                         </div>
                 </div>
             </div>
@@ -119,6 +121,7 @@
                             </div>
                             </div>
 
+                            @auth
                             <div class="mt-4">
                                 <form action="{{ route('file.upload') }}" method="POST" enctype="multipart/form-data">
                                     @csrf
@@ -130,6 +133,7 @@
                                         </x-primary-button>
                                 </form>
                             </div>
+                            @endauth
                         </div>
                 </div>
             </div>
