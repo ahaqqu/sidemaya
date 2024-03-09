@@ -20,6 +20,9 @@
                     <x-nav-link :href="route('layanan-umum')" :active="request()->routeIs('layanan-umum')">
                         {{ __('Layanan Umum') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('layanan-administrasi')" :active="request()->routeIs('layanan-administrasi')">
+                        {{ __('Layanan Administrasi') }}
+                    </x-nav-link>
                 </div>
             </div>
 

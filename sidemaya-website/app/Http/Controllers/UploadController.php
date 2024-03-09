@@ -10,7 +10,7 @@ class UploadController extends Controller
     {
         // Validate the uploaded file
         $request->validate([
-            'file' => 'required|file|mimes:doc,docx|max:10240',
+            'file' => 'required|file|mimes:pdf,doc,docx|max:10240',
             'description' => 'nullable|string',
         ]);
 
