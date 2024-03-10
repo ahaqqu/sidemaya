@@ -21,6 +21,8 @@ Route::get('/', function () {
 Route::get('/dashboard', 'App\Http\Controllers\DashboardController@index')->middleware(['auth', 'verified'])->name('dashboard');
 Route::get('/document/files/{directory}/{type}/{filename}', 'App\Http\Controllers\DocumentController@download')->name('document.download');
 
+Route::get('/document', 'App\Http\Controllers\DocumentController@table')->middleware(['auth', 'verified'])->name('document.table');
+
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
