@@ -7,6 +7,12 @@
     background-size: cover;
 }
 
+select.form-control{
+    display: inline;
+    width: 200px;
+    margin-left: 25px;
+}
+
 .dataTables_wrapper select,
 .dataTables_wrapper .dataTables_filter input {
     color: #4a5568;
