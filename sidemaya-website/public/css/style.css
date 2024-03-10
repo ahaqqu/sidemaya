@@ -1,3 +1,8 @@
 .section-header {
     color: red;
 }
+
+.background {
+    background-image: url('/images/sidemayabg.jpg');
+    background-size: cover;
+}

@@ -1,13 +1,5 @@
 <x-app-layout>
-    <x-slot name="header">
-        <div class="landing-page" style="background-image: url('backgrounds/<?php echo $selected_image; ?>');">
-            <style>
-                body {
-                    background-image: url('../sidemaya03.jpg');
-                    background-size: cover;
-                }
-            </style>
-
+        <div class="landing-page" style="background-image: url('backgrounds/');">
             <div class="jumbotron text-center p-5">
                 <h1 class="text-white"><strong>Selamat Datang di Layanan SIDEMAYA</strong></h1>
                 <p class="text-white"><strong>Dapatkan Layanan Desa dengan Mudah Cepat dan Nyaman.
@@ -20,5 +12,4 @@
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
             {{ __('Home') }}
         </h2>
-    </x-slot>
 </x-app-layout>
