@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('filename');
             $table->timestamp('updated_at');
             $table->string('updated_by');
-            $table->timestamp('created_at');
+            $table->datetime('created_at');
             $table->string('created_by');
         });
     }
