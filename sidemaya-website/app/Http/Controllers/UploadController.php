@@ -23,8 +23,9 @@ class UploadController extends Controller
             $fileName = time() . '_' . $request->file('file')->getClientOriginalName();
             $request->file('file')->storeAs("files/${type}/${doctype}", $fileName, 'private');
 
-            // Optionally, you can save file details to the database here
-            // For example, you can save the file name, path, user ID, etc.
+            $user['id'] = 1;
+            $user['name'] = 'dale';
+            DB::table('document')->insert($user);
 
             $type = str_replace('-', ' ', $doctype);
 
