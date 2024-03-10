@@ -44,4 +44,9 @@ From workspace
 - `composer require laravel/breeze --dev`
 - `php artisan breeze:install`
 - `php artisan migrate`
-- 
+
+### Modify Database Schema
+From workspace 
+- `php artisan make:migration <feature_name>`
+- Modify file at `sidemaya-website/database/migrations`
+- `php artisan migrate`
