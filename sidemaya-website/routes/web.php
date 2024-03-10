@@ -23,7 +23,7 @@ Route::get('/document/files/{directory}/{type}/{filename}', 'App\Http\Controller
 
 Route::get('/document', 'App\Http\Controllers\DocumentController@table')->middleware(['auth', 'verified'])->name('document.table');
 Route::get('/template-surat', 'App\Http\Controllers\TemplateSuratController@view')->middleware(['auth', 'verified'])->name('templatesurat.view');
-Route::get('/daftar-surat', 'App\Http\Controllers\DaftaSuratController@view')->middleware(['auth', 'verified'])->name('daftarsurat.view');
+Route::get('/daftar-surat', 'App\Http\Controllers\DaftarSuratController@view')->middleware(['auth', 'verified'])->name('daftarsurat.view');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

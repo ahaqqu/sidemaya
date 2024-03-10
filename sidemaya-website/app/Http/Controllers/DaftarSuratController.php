@@ -4,12 +4,15 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Routing\Controller;
+use Illuminate\Support\Facades\DB;
 
-class TemplateSuratController extends Controller
+class DaftarSuratController extends Controller
 {
 
     public function view()
     {
-        return view('daftarsurat.index');
+        $documents = DB::table('documents')->distinct()->get()->toArray();
+
+        return view('daftarsurat.index', compact('documents'));
     }
 }

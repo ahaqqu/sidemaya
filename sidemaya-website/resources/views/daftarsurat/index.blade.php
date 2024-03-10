@@ -7,36 +7,28 @@
 
 
 			<table id="example" class="stripe hover" style="width:100%; padding-top: 1em;  padding-bottom: 1em;">
+
 				<thead>
 					<tr>
-						<th data-priority="1">Name</th>
-						<th data-priority="2">Position</th>
-						<th data-priority="3">Office</th>
-						<th data-priority="4">Age</th>
-						<th data-priority="5">Start date</th>
-						<th data-priority="6">Salary</th>
+						<th data-priority="1">ID Surat</th>
+						<th data-priority="2">Jenis Surat</th>
+						<th data-priority="3">Nomor Surat</th>
+						<th data-priority="4">Waktu Mohon</th>
+						<th data-priority="5"></th>
 					</tr>
 				</thead>
 				<tbody>
-					<tr>
-						<td>Tiger Nixon</td>
-						<td>System Architect</td>
-						<td>Edinburgh</td>
-						<td>61</td>
-						<td>2011/04/25</td>
-						<td>$320,800</td>
-					</tr>
-
-					<!-- Rest of your data (refer to https://datatables.net/examples/server_side/ for server side processing)-->
-
-					<tr>
-						<td>Donna Snider</td>
-						<td>Customer Support</td>
-						<td>New York</td>
-						<td>27</td>
-						<td>2011/01/25</td>
-						<td>$112,000</td>
-					</tr>
+                    @foreach ($documents as $document)
+                        <tr>
+                            <td>{{ $document->id }}</td>
+                            <td>{{ $document->category }}</td>
+                            <td>{{ $document->identifier }}</td>
+                            <td>{{ $document->created_at }}</td>
+                            <td><button onclick="location.href='../download/layanan-umum/Surat-Keterangan-Usaha.docx'" type="button" class="underline rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800">
+                                {{ __('Unduh') }}
+                            </button></td>
+                        </tr>
+                    @endforeach
 				</tbody>
 
 			</table>
