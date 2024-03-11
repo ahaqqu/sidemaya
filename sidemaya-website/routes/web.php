@@ -39,7 +39,11 @@ Route::get('/daftar-surat-warga', 'App\Http\Controllers\DaftarSuratWargaControll
 Route::get('/documents/process/{uuid}', 'App\Http\Controllers\DownloadProcessController@download')->middleware(['auth', 'verified'])->name('documents.process');
 
 Route::get('/proses-surat/{uuid}', 'App\Http\Controllers\ProsesSuratController@view')->middleware(['auth', 'verified'])->name('prosessurat.view');
-Route::get('/ajukansurat', 'App\Http\Controllers\AjukanSuratController@view')->middleware(['auth', 'verified'])->name('ajukansurat.view');
+
+Route::get('/ajukansurat', 'App\Http\Controllers\AjukanSuratController@upload')->middleware(['auth', 'verified'])->name('ajukansurat.upload');
+Route::post('/upload', 'AjukanSuratController@upload')->name('ajukansurat.upload');
+
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
