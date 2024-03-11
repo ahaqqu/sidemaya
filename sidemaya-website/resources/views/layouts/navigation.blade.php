@@ -24,6 +24,9 @@
                         <x-nav-link :href="route('ajukan-surat')" :active="request()->routeIs('ajukan-surat')">
                             {{ __('Ajukan Surat') }}
                         </x-nav-link>
+                        <x-nav-link :href="route('templatesurat.view')" :active="request()->routeIs('templatesurat.view')">
+                            {{ __('Format Dokumen Administrasi') }}
+                        </x-nav-link>
                         @endif
 
                     @endauth
