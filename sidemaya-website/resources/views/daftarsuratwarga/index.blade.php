@@ -20,9 +20,11 @@
 						<th data-priority="1">ID Surat</th>
 						<th data-priority="2">Jenis Surat</th>
 						<th data-priority="3">Nomor Surat</th>
-						<th data-priority="4">Waktu Mohon</th>
-						<th data-priority="4">Status</th>
-						<th data-priority="5"></th>
+						<th data-priority="4">NIK Pemohon</th>
+						<th data-priority="5">Nama Pemohon</th>
+						<th data-priority="6">Waktu Mohon</th>
+						<th data-priority="7">Status</th>
+						<th data-priority="8"></th>
 					</tr>
 				</thead>
 				<tbody>
@@ -31,6 +33,11 @@
                             <td>{{ $document->id }}</td>
                             <td>{{ $document->category }}</td>
                             <td>{{ $document->identifier }}</td>
+                            @php
+                            $created_by = App\Models\User::find($document->created_by);
+                            @endphp
+                            <td>{{ $created_by->nik }}</td>
+                            <td>{{ $created_by->name }}</td>
                             <td>{{ $document->created_at }}</td>
                             <td>{{ $document->status }}</td>
                             <td>
@@ -89,7 +96,7 @@
                     initComplete: function () {
                             $(".dataTables_filter").append($("#categoryFilter"));
 
-                            var categoryIndex = 4;
+                            var categoryIndex = 6;
                               $("#filterTable th").each(function (i) {
                                 if ($($(this)).html() == "Category") {
                                   categoryIndex = i; return false;

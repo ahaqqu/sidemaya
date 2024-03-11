@@ -3,6 +3,10 @@
     background-size: cover;
 }
 
+.section input {
+    width: 500px;
+}
+
 select.form-control{
     display: inline;
     width: 200px;

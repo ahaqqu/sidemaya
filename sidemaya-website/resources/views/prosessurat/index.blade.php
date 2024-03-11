@@ -38,23 +38,23 @@
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900 dark:text-gray-100">
                     <div class="section">
-                            <div class="section-header">{{ $document->category }}</div>
 
-                            <div class="mt-4">
                             @php
                             echo <<<EOL
                                 <button onclick="location.href='../documents/process/$document->uuid'" type="button" class="underline rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800">
                                     Unduh dokumen warga
                                 </button>
-                                <label for="nama">Nama Warga:</label><br>
-                                <input type="text" id="nama" name="nama" style="color:black;"><br><br>
                             EOL;
                             @endphp
+                            <br><br>
+                            <label for="nama">Jenis Surat:</label><br>
+                            <input type="text" id="nama" name="nama" style="color:black; background-color:grey" readonly value="{{ $document->category }}"><br><br>
+                            <label for="nama">Nama Warga:</label><br>
+                            <input type="text" id="nama" name="nama" style="color:black; background-color:grey" readonly value="{{ $created_by->name }}"><br><br>
+                            <label for="nama">Waktu Mohon:</label><br>
+                            <input type="text" id="nama" name="nama" style="color:black; background-color:grey" readonly value="{{ $document->created_at }}"><br>
 
                             <br>
-                            <div class="section-content">
-                            </div>
-                            </div>
                             @auth
                             <div class="mt-4">
                                 <form action="{{ route('documentsfinal.upload') }}" method="POST" enctype="multipart/form-data">
