@@ -5,8 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\DB;
-
+use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use App\Models\Document;
 
 class DocumentsFinalController extends Controller
 {
@@ -39,8 +41,7 @@ class DocumentsFinalController extends Controller
             $nomorsurat = $request->input('nomorsurat');
             $uuid = $request->input('uuid');
 
-            $documents = DB::table('documents')->where('uuid', '=', $uuid)->distinct()->get()->toArray();
-            $document = reset($documents);
+            $document = Document::where('uuid', '=', $uuid)->firstOrFail();
 
             $originalname = $file->getClientOriginalName();
             $extension = substr($originalname, strrpos($originalname, '.')+1);
@@ -48,9 +49,11 @@ class DocumentsFinalController extends Controller
             $category = $document->category;
             $file->storeAs("files/final/${category}", $fileName, 'private');
 
-            DB::table('documents')->update($document);
-
-//            $type = str_replace('-', ' ', $doctype);
+            $document->identifier = $nomorsurat;
+            $document->status = "Selesai";
+            $document->updated_at = Carbon::now()->format('Y-m-d H:i:s');
+            $document->updated_by = Auth::user()->id;
+            $document->update();
 
             return redirect()->back()->with('success', "Dokumen sukses diunggah.");
         } else {

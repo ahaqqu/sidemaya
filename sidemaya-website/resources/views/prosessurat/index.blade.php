@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-            {{ __('Layanan Umum') }}
+            {{ __('Proses Surat') }}
         </h2>
     </x-slot>
 
@@ -46,6 +46,8 @@
                                 <button onclick="location.href='../documents/process/$document->uuid'" type="button" class="underline rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800">
                                     Unduh dokumen warga
                                 </button>
+                                <label for="nama">Nama Warga:</label><br>
+                                <input type="text" id="nama" name="nama" style="color:black;"><br><br>
                             EOL;
                             @endphp
 
