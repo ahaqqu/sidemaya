@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FileController;
 use App\Http\Controllers\DocumentFinalController;
+use App\Http\Controllers\AjukanSuratController;
 
 
 /*
@@ -41,6 +42,7 @@ Route::get('/documents/process/{uuid}', 'App\Http\Controllers\DownloadProcessCon
 Route::get('/proses-surat/{uuid}', 'App\Http\Controllers\ProsesSuratController@view')->middleware(['auth', 'verified'])->name('prosessurat.view');
 
 Route::get('/ajukansurat', 'App\Http\Controllers\AjukanSuratController@view')->middleware(['auth', 'verified'])->name('ajukansurat.view');
+Route::post('/ajukansurat/upload', [AjukanSuratController::class, 'upload'])->name('ajukansurat.upload');
 Route::post('/upload', 'AjukanSuratController@view')->name('ajukansurat.view');
 
 
