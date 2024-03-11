@@ -28,7 +28,7 @@ Route::get('/document', 'App\Http\Controllers\DocumentController@table')->middle
 Route::get('/template-surat', 'App\Http\Controllers\TemplateSuratController@view')->middleware(['auth', 'verified'])->name('templatesurat.view');
 Route::get('/upload', [FileController::class, 'showForm']);
 Route::post('/upload', [FileController::class, 'uploadFile']);
-Route::post('/documentsfinal/upload', [DocumentFinalController::class, 'upload'])->name('documentsfinal.upload');
+Route::post('/documentsfinal/upload', [DocumentsFinalController::class, 'upload'])->name('documentsfinal.upload');
 
 Route::get('/daftar-surat', 'App\Http\Controllers\DaftarSuratController@view')->middleware(['auth', 'verified'])->name('daftarsurat.view');
 Route::get('/documents/final/{uuid}', 'App\Http\Controllers\DocumentsFinalController@download')->middleware(['auth', 'verified'])->name('documentsfinal.download');
