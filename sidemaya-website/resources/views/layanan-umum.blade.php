@@ -4,7 +4,6 @@
             {{ __('Layanan Umum') }}
         </h2>
     </x-slot>
-
     @if (\Session::has('success'))
         <div class="pt-8">
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">

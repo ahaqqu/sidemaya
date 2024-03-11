@@ -37,6 +37,8 @@ class DocumentsFinalController extends Controller
 
         // Process the uploaded file
         $file = $request->file('file');
+        $path = $file->storeAs('storage', $file->getClientOriginalName(), 'app'); // Sesuaikan nama-folder dan nama-storage
+
         if ($file->isValid()) {
             $nomorsurat = $request->input('nomorsurat');
             $uuid = $request->input('uuid');
@@ -59,5 +61,6 @@ class DocumentsFinalController extends Controller
         } else {
             return redirect()->back()->with('error', 'Dokumen gagal diunggah. Sistem hanya mendukung tipe dokumen: doc, docx, dan pdf');
         }
+
     }
 }

@@ -2,6 +2,9 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\FileController;
+use App\Http\Controllers\DocumentFinalController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -23,7 +26,9 @@ Route::get('/document/files/{directory}/{type}/{filename}', 'App\Http\Controller
 
 Route::get('/document', 'App\Http\Controllers\DocumentController@table')->middleware(['auth', 'verified'])->name('document.table');
 Route::get('/template-surat', 'App\Http\Controllers\TemplateSuratController@view')->middleware(['auth', 'verified'])->name('templatesurat.view');
-
+Route::get('/upload', [FileController::class, 'showForm']);
+Route::post('/upload', [FileController::class, 'uploadFile']);
+Route::post('/documentsfinal/upload', [DocumentsFinalController::class, 'upload'])->name('documentsfinal.upload');
 
 Route::get('/daftar-surat', 'App\Http\Controllers\DaftarSuratController@view')->middleware(['auth', 'verified'])->name('daftarsurat.view');
 Route::get('/documents/final/{uuid}', 'App\Http\Controllers\DocumentsFinalController@download')->middleware(['auth', 'verified'])->name('documentsfinal.download');
@@ -52,6 +57,12 @@ Route::get('/layanan-administrasi', function() {
 })->name('layanan-administrasi');
 
 Route::post('/layanan-administrasi', 'App\Http\Controllers\UploadController@upload')->name('file.upload');
+
+Route::get('/ajukan-surat', function() {
+    return view('ajukan-surat');
+})->name('ajukan-surat');
+
+Route::post('/ajukan-surat', 'App\Http\Controllers\UploadController@upload')->name('file.upload');
 
 Route::get('/download/{directory}/{filename}', 'App\Http\Controllers\DownloadController@download')->name('file.download');
 
