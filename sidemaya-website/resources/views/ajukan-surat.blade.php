@@ -22,9 +22,11 @@ if (isset($_SESSION['upload_success']) && $_SESSION['upload_success']) {
 </div>
 
             <br><br>
-
-
-        <h2>Jenis Surat</h2>
+        <div class="text-black">
+            <h2><strong>Mengajukan Permohonan Surat Baru</strong></h2>
+</div>
+<div class="form-container">
+        <h2>Jenis Surat</h2><br>
         <select id="jenissurat" name="jenissurat" placeholder="Pilih..." class="form-control klasifikasi">
             <option value="" disabled selected>Pilih Jenis Surat</option>
             <option value="jenis1">Surat Keterangan Tidak Mampu</option>
@@ -33,22 +35,22 @@ if (isset($_SESSION['upload_success']) && $_SESSION['upload_success']) {
             <option value="jenis2">Formulir Permohonan KTP</option>
             <option value="jenis2">Formulir Kartu Keluarga</option>
         </select>
-    </div>
+    </div><br>
     <!-- Formulir Upload -->
     <form action="{{ route('ajukansurat.upload') }}" method="post" enctype="multipart/form-data">
 @csrf
-            <div class="m-5">
-                Pilih file untuk diunggah:
-            </div>
+<div class="form-container"><br>
+            <h2><strong>Upload Dokumen</strong></h2>
 
-        <div class="form-group">
-            <input type="file" name="file" id="file" required class="text-center m-5" class="custom-file-input">
-        </div>
-        <div class="form-group col-md-4 p-5">
+            <div class="form-group">
+            <input type="file" name="file" id="file" required class="form-control custom-file-input">
+        </div><br>
+        <div class="form-group"><br>
         <x-primary-button>
                                          {{ __('Ajukan') }}
                                      </x-primary-button>
         </div>
+</div>
 <!----
         <br><br>
                             <label for="nama">Jenis Surat</label><br>
@@ -62,4 +64,15 @@ if (isset($_SESSION['upload_success']) && $_SESSION['upload_success']) {
                             <input type="text" id="nama" name="nama" style="color:black; background-color:lightgrey" readonly value=""><br><br>
 --->
     </form>
+    <style>
+    .form-container {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .form-group {
+        margin-bottom: 10px;
+    }
+</style>
 </x-app-layout>
