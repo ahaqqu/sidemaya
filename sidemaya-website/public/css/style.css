@@ -18,6 +18,22 @@ table.dataTable thead th, table.dataTable tfoot th {
     background-color: green;
 }
 
+.menuitem {
+    border-color: transparent !important;
+    border-width: 0px 0px 5px 0px !important;
+}
+
+.menuitem:hover {
+    border-color: darkgreen !important;
+    border-width: 0px 0px 5px 0px !important;
+}
+
+.menuitem.bg-darkgreen {
+    background: darkgreen;
+    border-color: darkgreen !important;
+    border-width: 0px 0px 5px 0px !important;
+}
+
 .dataTables_wrapper select,
 .dataTables_wrapper .dataTables_filter input {
     color: #4a5568;
