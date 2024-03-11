@@ -47,10 +47,17 @@ if (isset($_SESSION['upload_success']) && $_SESSION['upload_success']) {
         </div><br>
         <div class="form-group"><br>
         <x-primary-button>
-                                         {{ __('Ajukan') }}
+                                         {{ __('Lihat') }}
                                      </x-primary-button>
-        </div>
+        <x-primary-button>
+                                         {{ __('Ajukan Surat') }}
+                                     </x-primary-button>
+
 </div>
+<div><br><br>
+<span style="color: red;">*Mohon untuk segera mengambil/mengunduh surat yang sudah selesai agar dapat mengajukan surat lain.</span><br><br>
+</div>
+
 <!----
         <br><br>
                             <label for="nama">Jenis Surat</label><br>
