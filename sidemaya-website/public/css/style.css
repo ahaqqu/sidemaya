@@ -29,6 +29,15 @@
     color: black;
 }
 
+div.rounded-md.bg-white a.text-gray-700{
+    color: black;
+}
+
+div.rounded-md.bg-white a.text-gray-700:hover{
+    background: lightgrey;
+}
+
+
 select.form-control{
     display: inline;
     width: 200px;
