@@ -37,6 +37,16 @@ div.rounded-md.bg-white a.text-gray-700:hover{
     background: lightgrey;
 }
 
+.dataTables_wrapper td button {
+    background: lightgreen;
+    padding: 5px;
+    text-decoration: none;
+}
+
+.dataTables_wrapper td button:hover {
+    background: darkgreen;
+    color: white;
+}
 
 select.form-control{
     display: inline;
