@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-            {{ __('Proses Surat') }}
+            {{ __('Persetujuan Surat') }}
         </h2>
     </x-slot>
 
@@ -42,19 +42,19 @@
                             @php
                             echo <<<EOL
                                 <button onclick="location.href='../documents/process/$document->uuid'" type="button" class="underline rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800">
-                                    Unduh dokumen warga
+                                    Unduh dokumen yang diajukan pemohon
                                 </button>
                             EOL;
                             @endphp
                             <br><br>
-                            <label for="nama">Jenis Surat:</label><br>
-                            <input type="text" id="nama" name="nama" style="color:black; background-color:grey" readonly value="{{ $document->category }}"><br><br>
-                            <label for="nama">Nama Warga:</label><br>
-                            <input type="text" id="nama" name="nama" style="color:black; background-color:grey" readonly value="{{ $created_by->name }}"><br><br>
-                            <label for="nama">Waktu Mohon:</label><br>
-                            <input type="text" id="nama" name="nama" style="color:black; background-color:grey" readonly value="{{ $document->created_at }}"><br>
+                            <label for="nama">Jenis Surat</label><br>
+                            <input type="text" id="nama" name="nama" style="color:black; background-color:lightgrey" readonly value="{{ $document->category }}"><br><br>
+                            <label for="nama">Pemohon</label><br>
+                            <input type="text" id="nama" name="nama" style="color:black; background-color:lightgrey" readonly value="{{ $created_by->name }}"><br><br>
+                            <label for="nama">Waktu Mohon</label><br>
+                            <input type="text" id="nama" name="nama" style="color:black; background-color:lightgrey" readonly value="{{ $document->created_at }}"><br>
 
-                            <br>
+
                             @auth
                             <div class="mt-4">
                                 <form action="{{ route('documentsfinal.upload') }}" method="POST" enctype="multipart/form-data">
@@ -64,11 +64,12 @@
                                     <input type="hidden" name="uuid" value="$document->uuid">
                                     EOL;
                                     @endphp
-                                    <label for="nomorsurat">Nomor Surat:</label><br>
+                                    <label for="nomorsurat">Nomor Surat</label><br>
                                     <input type="text" id="nomorsurat" name="nomorsurat" style="color:black;"><br><br>
+                                    <label for="file">Lampirkan Dokumen yang Disetujui</label><br>
                                     <input type="file" name="file"><br><br>
-                                    <x-primary-button class="ms-3">
-                                        {{ __('Unggah') }}
+                                    <x-primary-button>
+                                        {{ __('Kirim') }}
                                     </x-primary-button>
                                 </form>
                             </div>

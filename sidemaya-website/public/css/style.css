@@ -7,10 +7,53 @@
     width: 500px;
 }
 
+.bg-white {
+    background: white !important;
+}
+
+.bg-white button[type=submit]{
+    background: green !important;
+    color: white;
+}
+
+.bg-white button[type=submit]:hover{
+    background: darkgreen !important;
+    color: white;
+}
+
+.bg-white label {
+    color: black;
+}
+
+.bg-white button {
+    color: black;
+}
+
 select.form-control{
     display: inline;
     width: 200px;
     margin-left: 25px;
+}
+
+table.dataTable thead th, table.dataTable tfoot th {
+    color: white;
+    background-color: green;
+}
+
+.menuitem {
+    border-color: transparent !important;
+    border-width: 0px 0px 5px 0px !important;
+}
+
+.menuitem:hover {
+    border-color: darkgreen !important;
+    border-width: 0px 0px 5px 0px !important;
+}
+
+.menuitem.bg-darkgreen {
+    background: darkgreen;
+    border-color: darkgreen !important;
+    border-width: 0px 0px 5px 0px !important;
 }
 
 .dataTables_wrapper select,
