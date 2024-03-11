@@ -91,7 +91,7 @@
 			var table = $('#example').DataTable({
 					responsive: true,
 					order: [
-                        [0, 'desc']
+                        [0, 'asc']
                     ],
                     initComplete: function () {
                             $(".dataTables_filter").append($("#categoryFilter"));
@@ -126,6 +126,20 @@
                                 $("th[data-priority='8'").removeClass("sorting");
                                }, 100);
 
+                        },
+                        "language": {
+                            "lengthMenu": "Menampilkan _MENU_ surat",
+                            "zeroRecords": "Tidak ditemukan surat",
+                            "info": "Menampilkan halaman _PAGE_ dari _PAGES_",
+                            "infoEmpty": "Tidak ditemukan surat",
+                            "infoFiltered": "(tersaring dari semua _MAX_ surat)",
+                            "search": "Pencarian:",
+                            "paginate": {
+                                "first":      "Pertama",
+                                "last":       "Terakhir",
+                                "next":       "Lanjut",
+                                "previous":   "Sebelum"
+                            },
                         }
 				})
 				.columns.adjust()
