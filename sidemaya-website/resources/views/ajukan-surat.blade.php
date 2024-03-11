@@ -36,7 +36,7 @@ if (isset($_SESSION['upload_success']) && $_SESSION['upload_success']) {
     </div>
     <!-- Formulir Upload -->
     <form action="{{ route('ajukansurat.upload') }}" method="post" enctype="multipart/form-data">
-
+@csrf
             <div class="m-5">
                 Pilih file untuk diunggah:
             </div>
@@ -49,7 +49,7 @@ if (isset($_SESSION['upload_success']) && $_SESSION['upload_success']) {
                                          {{ __('Ajukan') }}
                                      </x-primary-button>
         </div>
-
+<!----
         <br><br>
                             <label for="nama">Jenis Surat</label><br>
                             <select id="jenissurat" name="jenissurat" placeholder="Pilih..." class="form-control klasifikasi">
@@ -60,6 +60,6 @@ if (isset($_SESSION['upload_success']) && $_SESSION['upload_success']) {
                             <input type="text" id="nama" name="nama" style="color:black; background-color:lightgrey" readonly value=""><br><br>
                             <label for="nama">Pemohon</label><br>
                             <input type="text" id="nama" name="nama" style="color:black; background-color:lightgrey" readonly value=""><br><br>
-
+--->
     </form>
 </x-app-layout>

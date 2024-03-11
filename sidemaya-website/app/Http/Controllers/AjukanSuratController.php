@@ -44,7 +44,9 @@ class AjukanSuratController extends Controller
 
             return redirect()->back()->with('success', "Dokumen sukses diunggah.");
         } else {
-            return redirect()->back()->with('error', 'Dokumen gagal diunggah. Sistem hanya mendukung tipe dokumen: doc, docx, dan pdf');
+            // Menampilkan pop-up kesalahan dan mengarahkan pengguna kembali
+            echo "<script>alert('Hanya file PDF yang diizinkan untuk diunggah.'); history.go(-1);</script>";
+            exit();
         }
     }
 }
