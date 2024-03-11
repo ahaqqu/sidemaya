@@ -14,20 +14,16 @@
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     @auth
                         @if (Auth::user()->isAdmin())
-                        <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                            {{ __('Dashboard') }}
+                        <x-nav-link :href="route('daftarsuratwarga.view')" :active="request()->routeIs('daftarsuratwarga.view')">
+                            {{ __('Daftar Surat Warga') }}
+                        </x-nav-link>
+                        @else
+                        <x-nav-link :href="route('ajukan-surat')" :active="request()->routeIs('ajukan-surat')">
+                            {{ __('Ajukan Surat') }}
                         </x-nav-link>
                         @endif
+
                     @endauth
-                    <x-nav-link :href="route('layanan-umum')" :active="request()->routeIs('layanan-umum')">
-                        {{ __('Layanan Umum') }}
-                    </x-nav-link>
-                    <x-nav-link :href="route('layanan-administrasi')" :active="request()->routeIs('layanan-administrasi')">
-                        {{ __('Layanan Administrasi') }}
-                    </x-nav-link>
-                    <x-nav-link :href="route('ajukan-surat')" :active="request()->routeIs('ajukan-surat')">
-                        {{ __('Ajukan Surat') }}
-                    </x-nav-link>
                 </div>
             </div>
 

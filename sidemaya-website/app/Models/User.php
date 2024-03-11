@@ -46,6 +46,6 @@ class User extends Authenticatable
     //TODO https://www.appfinz.com/blogs/laravel-middleware-for-auth-admin-users-roles/
     public function isAdmin(): bool
     {
-        return ($this->email === 'angga.haqqu@gmail.com') || (str_contains($this->email, '@ui.ac.id'));
+        return ($this->role === 'ADMIN');
     }
 }
