@@ -41,8 +41,8 @@ Route::get('/documents/process/{uuid}', 'App\Http\Controllers\DownloadProcessCon
 Route::get('/proses-surat/{uuid}', 'App\Http\Controllers\ProsesSuratController@view')->middleware(['auth', 'verified'])->name('prosessurat.view');
 
 Route::get('/ajukansurat', 'App\Http\Controllers\AjukanSuratController@upload')->middleware(['auth', 'verified'])->name('ajukansurat.upload');
+Route::post('/upload', 'AjukanSuratController@upload')->name('ajukansurat.upload');
 
-Route::get('/ajukansurat', 'App\Http\Controllers\AjukanSuratController@view')->middleware(['auth', 'verified'])->name('ajukansurat.view');
 
 
 Route::middleware('auth')->group(function () {
