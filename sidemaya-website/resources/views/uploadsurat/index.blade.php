@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-            {{ __('Layanan Umum') }}
+            {{ __('Ajukan Surat') }}
         </h2>
     </x-slot>
 
@@ -42,7 +42,7 @@
 
                             <div class="mt-4">
                             @php
-                            echo <<<EOL
+echo <<<EOL
                                 <button onclick="location.href='../documents/process/$document->uuid'" type="button" class="underline rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800">
                                     Unduh dokumen warga
                                 </button>
@@ -58,13 +58,18 @@
                                 <form action="{{ route('documentsfinal.upload') }}" method="POST" enctype="multipart/form-data">
                                     @csrf
                                      @php
-                                    echo <<<EOL
+    echo <<<EOL
                                     <input type="hidden" name="uuid" value="$document->uuid">
                                     EOL;
                                     @endphp
-                                    <label for="nomorsurat">Nomor Surat:</label><br>
-                                    <input type="text" id="nomorsurat" name="nomorsurat" style="color:black;"><br><br>
-                                    <input type="file" name="file"><br><br>
+        <label for="nomorsurat">Nomor Surat:</label><br>
+        <select name="nomorsurat" id="nomorsurat" style="color: black;">
+            <option value="Surat A">Surat A</option>
+            <option value="Surat B">Surat B</option>
+        </select><br><br>
+
+        <label for="file">Unggah Dokumen (PDF):</label><br>
+        <input type="file" name="file" accept=".pdf"><br><br>
                                     <x-primary-button class="ms-3">
                                         {{ __('Unggah') }}
                                     </x-primary-button>
