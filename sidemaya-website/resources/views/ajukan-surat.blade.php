@@ -1,11 +1,5 @@
 <x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-            {{ __('Ajukan Surat') }}
-        </h2>
-    </x-slot>
-
-    <?php
+<?php
 session_start();
 
 // Menampilkan pop-up notifikasi jika file berhasil diunggah
@@ -14,39 +8,17 @@ if (isset($_SESSION['upload_success']) && $_SESSION['upload_success']) {
     unset($_SESSION['upload_success']); // Menghapus session setelah notifikasi ditampilkan
 }
 ?>
-<!DOCTYPE html>
-<html lang="en">
+	<!--Container-->
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        /* Gaya untuk input file */
-        .custom-file-input {
-            display: inline-block;
-            padding: 6px 12px;
-            cursor: pointer;
-            border: 1px solid #ccc;
-            background-color: #4CAF50;
-            /* Warna latar belakang yang ingin Anda gunakan */
-            color: #fff;
-            /* Warna teks */
-            border-radius: 4px;
-        }
-
-        /* Menyembunyikan input file asli */
-        .custom-file-input input {
-            display: none;
-        }
-    </style>
     <title>Ajukan Surat</title>
-</head>
+	<div class="container w-full md:w-4/5 xl:w-3/5  mx-auto px-2">
 
-<body>
-    <div class="jumbotron text-center p-5">
-        <h1><strong>Ajukan Surat</strong></h1>
-    </div>
-    <div class="form-group col-md-4 p-5">
+		<!--Card-->
+		<div id='recipients' class="p-8 mt-6 lg:mt-0 rounded shadow bg-white">
+
+        <div class="category-filter">
+
+
         <h2>Jenis Surat</h2>
         <select id="jenissurat" name="jenissurat" placeholder="Pilih..." class="form-control klasifikasi">
             <option value="" disabled selected>Pilih Jenis Surat</option>
@@ -69,7 +41,4 @@ if (isset($_SESSION['upload_success']) && $_SESSION['upload_success']) {
             <button class="btn btn-warning btn-lg" type="" name="submit" class="text-center m-5">Lihat</button>
         </div>
     </form>
-</body>
-
-</html>
 </x-app-layout>
