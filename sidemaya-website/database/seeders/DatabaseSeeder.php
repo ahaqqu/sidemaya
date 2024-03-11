@@ -19,6 +19,34 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
 
+        DB::table('users')->insert([
+             'id' => 1,
+             'name' => "Admin",
+             'email' => 'admin@sidemaya.com',
+             'password' => Hash::make('password'),
+             'nik' => '77777777',
+             'role' => 'ADMIN'
+        ]);
+
+        DB::table('users')->insert([
+             'id' => 2,
+             'name' => "Alex Purwoto",
+             'email' => 'alex.purwoto@gmail.com',
+             'password' => Hash::make('password'),
+             'nik' => '1234567890'
+        ]);
+
+        DB::table('users')->insert([
+             'id' => 3,
+             'name' => "Susi Hoffmann",
+             'email' => 'susi.hoffmann@gmail.com',
+             'password' => Hash::make('password'),
+             'nik' => '33333333'
+        ]);
+
+
+
+
         $uuid = "a333424d-0cbb-497c-9e8f-fe556f8faef1";
         DB::table('documents')->insert([
              'id' => 1,
@@ -99,16 +127,16 @@ class DatabaseSeeder extends Seeder
              'created_by' => '2',
         ]);
 
-        $uuid = Str::uuid();
+        $uuid = "5d4fac7f-4eb2-483f-9bfb-5b1786bb4769 ";
         DB::table('documents')->insert([
              'id' => 6,
              'uuid' => $uuid,
              'identifier' => '',
              'version' => '1',
-             'category' => 'Tidak Boleh Muncul',
+             'category' => 'Surat Keterangan Domisili',
              'status' => 'Proses',
              'notes' => 'Tolong proses ya',
-             'filename' => 'TidakBolehMuncul.doc',
+             'filename' => "${uuid}.doc",
              'updated_by' => '1',
              'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
              'created_at' => Carbon::now()->toDateTimeString(),

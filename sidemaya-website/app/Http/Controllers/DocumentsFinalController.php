@@ -37,7 +37,6 @@ class DocumentsFinalController extends Controller
 
         // Process the uploaded file
         $file = $request->file('file');
-        $path = $file->storeAs('storage', $file->getClientOriginalName(), 'app'); // Sesuaikan nama-folder dan nama-storage
 
         if ($file->isValid()) {
             $nomorsurat = $request->input('nomorsurat');
