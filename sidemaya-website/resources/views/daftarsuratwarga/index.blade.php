@@ -121,7 +121,11 @@
                                 table.draw();
                               });
 
-                               setTimeout(function(){ $("#categoryFilter").val("Proses").change() }, 100);
+                               setTimeout(function(){
+                                $("#categoryFilter").val("Proses").change();
+                                $("th[data-priority='8'").removeClass("sorting");
+                               }, 100);
+
                         }
 				})
 				.columns.adjust()

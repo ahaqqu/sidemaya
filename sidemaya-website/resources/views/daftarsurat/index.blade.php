@@ -21,8 +21,8 @@
 						<th data-priority="2">Jenis Surat</th>
 						<th data-priority="3">Nomor Surat</th>
 						<th data-priority="4">Waktu Mohon</th>
-						<th data-priority="4">Status</th>
-						<th data-priority="5"></th>
+						<th data-priority="5">Status</th>
+						<th data-priority="6"></th>
 					</tr>
 				</thead>
 				<tbody>
@@ -103,6 +103,10 @@
                               $("#categoryFilter").change(function (e) {
                                 table.draw();
                               });
+
+                             setTimeout(function(){
+                              $("th[data-priority='6'").removeClass("sorting");
+                             }, 100);
 
                         }
 				})
