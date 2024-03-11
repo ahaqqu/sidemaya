@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\FileController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,7 +24,8 @@ Route::get('/document/files/{directory}/{type}/{filename}', 'App\Http\Controller
 
 Route::get('/document', 'App\Http\Controllers\DocumentController@table')->middleware(['auth', 'verified'])->name('document.table');
 Route::get('/template-surat', 'App\Http\Controllers\TemplateSuratController@view')->middleware(['auth', 'verified'])->name('templatesurat.view');
-
+Route::get('/upload', [FileController::class, 'showForm']);
+Route::post('/upload', [FileController::class, 'uploadFile']);
 
 Route::get('/daftar-surat', 'App\Http\Controllers\DaftarSuratController@view')->middleware(['auth', 'verified'])->name('daftarsurat.view');
 Route::get('/documents/final/{uuid}', 'App\Http\Controllers\DownloadFinalController@download')->middleware(['auth', 'verified'])->name('documents.final');
