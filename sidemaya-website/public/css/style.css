@@ -29,6 +29,14 @@
     color: black;
 }
 
+.bg-white input[type=file] {
+    color: black;
+}
+
+.bg-white div.section {
+    color: black;
+}
+
 div.rounded-md.bg-white a.text-gray-700{
     color: black;
 }
