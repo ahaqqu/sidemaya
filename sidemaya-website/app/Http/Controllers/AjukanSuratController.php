@@ -14,6 +14,6 @@ class AjukanSuratController extends Controller
     {
         $documents = DB::table('documents')->where('created_by', '=', Auth::user()->id)->distinct()->get()->toArray();
 
-        return view('daftarsurat.index', compact('documents'));
+        return view('ajukansurat.index', compact('documents'));
     }
 }
