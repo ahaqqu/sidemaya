@@ -7,6 +7,28 @@
     width: 500px;
 }
 
+.bg-white {
+    background: white !important;
+}
+
+.bg-white button[type=submit]{
+    background: green !important;
+    color: white;
+}
+
+.bg-white button[type=submit]:hover{
+    background: darkgreen !important;
+    color: white;
+}
+
+.bg-white label {
+    color: black;
+}
+
+.bg-white button {
+    color: black;
+}
+
 select.form-control{
     display: inline;
     width: 200px;
