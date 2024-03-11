@@ -21,7 +21,7 @@
                         <x-nav-link :href="route('daftarsurat.view')" :active="request()->routeIs('daftarsurat.view')">
                             {{ __('Daftar Surat') }}
                         </x-nav-link>
-                        <x-nav-link :href="route('ajukan-surat')" :active="request()->routeIs('ajukan-surat')">
+                        <x-nav-link :href="route('ajukansurat')" :active="request()->routeIs('ajukansurat')">
                             {{ __('Ajukan Surat') }}
                         </x-nav-link>
                         @endif

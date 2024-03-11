@@ -18,7 +18,7 @@ if (isset($_SESSION['upload_success']) && $_SESSION['upload_success']) {
 
         <div class="category-filter">
             <div class="jumbotron text-center">
-            <h1 class="text-black"><strong>Ajukan Surat</strong></h1>
+            <h1 class="text-black" style="font-size: 30px;"><strong>Ajukan Surat</strong></h1>
 </div>
 
             <br><br>
@@ -49,14 +49,16 @@ if (isset($_SESSION['upload_success']) && $_SESSION['upload_success']) {
         <x-primary-button>
                                          {{ __('Lihat') }}
                                      </x-primary-button>
-        <x-primary-button>
+        <x-primary-button type="submit">
                                          {{ __('Ajukan Surat') }}
                                      </x-primary-button>
 
 </div>
 <div><br><br>
-<span style="color: red;">*Mohon untuk segera mengambil/mengunduh surat yang sudah selesai agar dapat mengajukan surat lain.</span><br><br>
 </div>
+</form>
+<span style="color: red;">*Mohon untuk segera mengambil/mengunduh surat yang sudah selesai agar dapat mengajukan surat lain.</span><br><br>
+
 
 <!----
         <br><br>
@@ -70,7 +72,7 @@ if (isset($_SESSION['upload_success']) && $_SESSION['upload_success']) {
                             <label for="nama">Pemohon</label><br>
                             <input type="text" id="nama" name="nama" style="color:black; background-color:lightgrey" readonly value=""><br><br>
 --->
-    </form>
+
     <style>
     .form-container {
         display: flex;
