@@ -25,6 +25,9 @@
                     <x-nav-link :href="route('layanan-administrasi')" :active="request()->routeIs('layanan-administrasi')">
                         {{ __('Layanan Administrasi') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('ajukan-surat')" :active="request()->routeIs('ajukan-surat')">
+                        {{ __('Ajukan Surat') }}
+                    </x-nav-link>
                 </div>
             </div>
 

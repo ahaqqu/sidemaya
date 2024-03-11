@@ -58,6 +58,12 @@ Route::get('/layanan-administrasi', function() {
 
 Route::post('/layanan-administrasi', 'App\Http\Controllers\UploadController@upload')->name('file.upload');
 
+Route::get('/ajukan-surat', function() {
+    return view('ajukan-surat');
+})->name('ajukan-surat');
+
+Route::post('/ajukan-surat', 'App\Http\Controllers\UploadController@upload')->name('file.upload');
+
 Route::get('/download/{directory}/{filename}', 'App\Http\Controllers\DownloadController@download')->name('file.download');
 
 require __DIR__.'/auth.php';
