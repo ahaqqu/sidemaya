@@ -91,7 +91,7 @@
 			var table = $('#example').DataTable({
 					responsive: true,
 					order: [
-                        [0, 'desc']
+                        [0, 'asc']
                     ],
                     initComplete: function () {
                             $(".dataTables_filter").append($("#categoryFilter"));
