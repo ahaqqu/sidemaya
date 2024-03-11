@@ -26,7 +26,14 @@ Route::get('/template-surat', 'App\Http\Controllers\TemplateSuratController@view
 
 
 Route::get('/daftar-surat', 'App\Http\Controllers\DaftarSuratController@view')->middleware(['auth', 'verified'])->name('daftarsurat.view');
-Route::get('/documents/final/{uuid}', 'App\Http\Controllers\DownloadFinalController@download')->middleware(['auth', 'verified'])->name('documents.final');
+Route::get('/documents/final/{uuid}', 'App\Http\Controllers\DocumentsFinalController@download')->middleware(['auth', 'verified'])->name('documentsfinal.download');
+Route::post('/documents/final', 'App\Http\Controllers\DocumentsFinalController@upload')->middleware(['auth', 'verified'])->name('documentsfinal.upload');
+
+
+Route::get('/daftar-surat-warga', 'App\Http\Controllers\DaftarSuratWargaController@view')->middleware(['auth', 'verified'])->name('daftarsuratwarga.view');
+Route::get('/documents/process/{uuid}', 'App\Http\Controllers\DownloadProcessController@download')->middleware(['auth', 'verified'])->name('documents.process');
+
+Route::get('/proses-surat/{uuid}', 'App\Http\Controllers\ProsesSuratController@view')->middleware(['auth', 'verified'])->name('prosessurat.view');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
