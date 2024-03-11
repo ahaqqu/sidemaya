@@ -15,8 +15,8 @@ class AjukanSuratController extends Controller
         // Validate the uploaded file
         $request->validate([
             'file' => 'required|file|mimes:pdf,doc,docx|max:10240',
-            'nomorsurat' => 'required|string',
-            'uuid' => 'required|string',
+            //'nomorsurat' => 'required|string',
+            //'uuid' => 'required|string',
         ]);
 
         // Process the uploaded file
