@@ -37,7 +37,7 @@
                             @php
                                 if($document->status === "Selesai") {
                                     echo <<<EOL
-                                       <button onclick="location.href='../download/layanan-umum/Surat-Keterangan-Usaha.docx'" type="button" class="underline rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800">
+                                       <button onclick="location.href='../documents/final/$document->uuid'" type="button" class="underline rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800">
                                             Unduh
                                         </button>
                                     EOL;
