@@ -17,34 +17,40 @@ class AjukanSuratController extends Controller
     }
 
 
-    public function surat(Request $request)
+    public function upload(Request $request)
     {
         $request->validate([
             'file' => 'required|mimes:pdf|max:10240',
             'category' => 'required',
+            //'nomorsurat' => 'required|string',
         ]);
 
-        $document = new Document();
-        $document->category=$request->category;
+
         $file=$request->file('file');
 
-        $document->save();
-
+        if ($file->isValid()){
+            $document = new Document();
+            $document->category=$request->category;
+            $category=$request->select('category');
+            //$nomorsurat = $request->input('nomorsurat');
             $uuid = $document->id;
             $filename= $uuid.'.'.$file->getClientOriginalExtension();
 
-            Storage::disk('storage')->putFileAs('dokumenwarga', $file, $filename);
+            $file->storeAs("files/final/", $filename, 'private');
 
             //$document->storeAs('dokumenwarga',$filename);
-            $document->file = $filename;
+            //$document->identifier = $nomorsurat;
             $document->status = "Proses";
             $document->updated_at = Carbon::now()->format('Y-m-d H:i:s');
             $document->updated_by = Auth::user()->id;
             $document->save();
 
         return redirect()->back()->with('success', "Dokumen sukses diunggah.");
+    } else {
+            return redirect()->back()->with('error', 'Dokumen gagal diunggah. Sistem hanya mendukung tipe dokumen hanya pdf');
+        }
     }
-    }
+}
 
        //$request->file->move('asset',$filename);
 
