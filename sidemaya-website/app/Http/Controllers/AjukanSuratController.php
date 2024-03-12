@@ -31,7 +31,7 @@ class AjukanSuratController extends Controller
             $uuid = Str::uuid()->toString();
             $filename= $uuid.'.'.$file->getClientOriginalExtension();
 
-            $file->storeAs("files/proses/{$category}", $filename, 'private');
+            $file->storeAs("files/process/{$category}", $filename, 'private');
 
             $document = new Document();
             $document->uuid = $uuid;

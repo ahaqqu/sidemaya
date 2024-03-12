@@ -30,7 +30,7 @@ class AuthenticatedSessionController extends Controller
         $request->session()->regenerate();
 
         $home = "/daftar-surat";
-        if(Auth::user()->role === "ADMIN") {
+        if(Auth::user()->role == "ADMIN") {
             $home = "/daftar-surat-warga";
         }
 
