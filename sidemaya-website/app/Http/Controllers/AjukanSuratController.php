@@ -18,31 +18,29 @@ class AjukanSuratController extends Controller
     public function surat(Request $Request)
     {
         $Request->validate([
-            'filenames' => 'required|mimes:pdf|max:10240',
+            'filename' => 'required|mimes:pdf|max:10240',
             'category' => 'required',
             // Sesuaikan dengan jenis file yang diizinkan dan batas ukuran file
         ]);
 
-        $file = $Request->file('filenames');
+        $file = $Request->file('filename');
 
         // Pastikan file ada dan merupakan instance dari UploadedFile
-        if ($file && $file instanceof \Illuminate\Http\UploadedFile) {
-            $extension = $file->getClientOriginalExtension();
+       // if ($file && $file instanceof \Illuminate\Http\UploadedFile) {
+         //   $extension = $file->getClientOriginalExtension();
             // Lanjutkan dengan logika Anda
-            $file->move('storage/app/dokumenwarga', $extension);
-        } else {
-            // Tindakan jika file tidak ditemukan atau bukan instance UploadedFile
-            // (Contohnya, kirim pesan kesalahan, log, atau tindakan lain yang sesuai)
-        }
+           // $file->move('storage/app/dokumenwarga', $extension);
+        //} else {
+        //}
 
         $data=new DokumenWarga();
-       $file=$Request->file('filenames');
+       $file=$Request->file('filename');
        $filenames=time().''.$file->getClientOriginalExtension();
-       //$Request->file->move('storage/app/dokumenwarga',$filenames);
-       $data->file=$filenames;
+       $Request->file->move('storage/app/dokumenwarga',$filenames);
 
+       $data->file=$Request->filename;
        $data->category=$Request->category;
-       $data->filenames=$Request->filenames;
+       $data->filenames=$Request->filename;
 
        $data->save();
        return redirect()->back();
