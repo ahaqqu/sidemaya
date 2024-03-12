@@ -60,20 +60,6 @@ if (isset($_SESSION['upload_success']) && $_SESSION['upload_success']) {
 </form>
 <span style="color: red;">*Mohon untuk segera mengambil/mengunduh surat yang sudah selesai agar dapat mengajukan surat lain.</span><br><br>
 
-
-<!----
-        <br><br>
-                            <label for="nama">Jenis Surat</label><br>
-                            <select id="jenissurat" name="jenissurat" placeholder="Pilih..." class="form-control klasifikasi">
-            <option value="" disabled selected>Pilih Jenis Surat</option>
-            <option value="jenis1">Surat Keterangan Tidak Mampu</option>
-            <option value="jenis2">Surat Keterangan Usaha</option>
-        </select>
-                            <input type="text" id="nama" name="nama" style="color:black; background-color:lightgrey" readonly value=""><br><br>
-                            <label for="nama">Pemohon</label><br>
-                            <input type="text" id="nama" name="nama" style="color:black; background-color:lightgrey" readonly value=""><br><br>
---->
-
     <style>
     .form-container {
         display: flex;
