@@ -44,7 +44,7 @@
                             @php
                                 if($document->status === "Proses") {
                                     echo <<<EOL
-                                       <button onclick="location.href='../proses-surat/$document->uuid'" type="button" class="underline rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800">
+                                       <button onclick="location.href='../documents/process/$document->uuid'" type="button" class="underline rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800">
                                             Unduh
                                         </button>
                                         &nbsp
@@ -54,7 +54,7 @@
                                     EOL;
                                 } else if($document->status === "Selesai") {
                                    echo <<<EOL
-                                      <button onclick="location.href='../proses-surat/$document->uuid'" type="button" class="underline rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800">
+                                      <button onclick="location.href='../documents/final/$document->uuid'" type="button" class="underline rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800">
                                            Unduh
                                        </button>
                                    EOL;
