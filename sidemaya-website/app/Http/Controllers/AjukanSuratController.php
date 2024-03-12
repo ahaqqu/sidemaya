@@ -7,6 +7,7 @@ use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 
 
 class AjukanSuratController extends Controller
@@ -22,7 +23,7 @@ class AjukanSuratController extends Controller
         $request->validate([
             'file' => 'required|mimes:pdf|max:10240',
             'category' => 'required',
-            //'nomorsurat' => 'required|string',
+            'nomorsurat' => 'required|string',
         ]);
 
 
@@ -32,14 +33,13 @@ class AjukanSuratController extends Controller
             $document = new Document();
             $document->category=$request->category;
             $category=$request->select('category');
-            //$nomorsurat = $request->input('nomorsurat');
-            $uuid = $document->id;
+            $nomorsurat = $request->input('nomorsurat');
+            $uuid = Str::uuid()->toString();
             $filename= $uuid.'.'.$file->getClientOriginalExtension();
 
-            $file->storeAs("files/final/", $filename, 'private');
+            $file->storeAs("files/final/{$category}", $filename, 'private');
 
-            //$document->storeAs('dokumenwarga',$filename);
-            //$document->identifier = $nomorsurat;
+            $document->identifier = $nomorsurat;
             $document->status = "Proses";
             $document->updated_at = Carbon::now()->format('Y-m-d H:i:s');
             $document->updated_by = Auth::user()->id;
