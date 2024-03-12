@@ -25,26 +25,26 @@ if (isset($_SESSION['upload_success']) && $_SESSION['upload_success']) {
         <div class="text-black">
             <h2><strong>Mengajukan Permohonan Surat Baru</strong></h2>
 </div>
+    <!-- Formulir Upload -->
+
+    <form action="{{url('uploadsurat')}}" method="post" enctype="multipart/form-data">
+@csrf
 <div class="form-container">
         <h2>Jenis Surat</h2><br>
-        <select id="category" name="category">
+        <select name="category" required>
             <option value="" disabled selected>Pilih Jenis Surat</option>
-            <option value="jenis1">Surat Keterangan Tidak Mampu</option>
-            <option value="jenis2">Surat Keterangan Usaha</option>
-            <option value="jenis2">Surat Keterangan Domisili</option>
-            <option value="jenis2">Formulir Permohonan KTP</option>
-            <option value="jenis2">Formulir Kartu Keluarga</option>
+            <option value="Surat Keretangan Tidak Mampu">Surat Keterangan Tidak Mampu</option>
+            <option value="Surat Keterangan Usaha">Surat Keterangan Usaha</option>
+            <option value="Surat Keretangan Domisili">Surat Keterangan Domisili</option>
+            <option value="Formulir Permohonan KTP">Formulir Permohonan KTP</option>
+            <option value="Formulir Kartu Keluarga">Formulir Kartu Keluarga</option>
         </select>
     </div><br>
-    <!-- Formulir Upload -->
-    <form action="/uploadsurat" method="post" enctype="multipart/form-data">
-    <!-- <form action="{{url('uploadsurat')}}" method="post" enctype="multipart/form-data"> -->
-@csrf
 <div class="form-container"><br>
             <h2><strong>Upload Dokumen</strong></h2>
 
             <div class="form-group">
-            <input type="file" name="filename" id="filename" required class="form-control custom-file-input">
+            <input type="file" name="file" required class="form-control custom-file-input">
         </div><br>
         <div class="form-group"><br>
         <x-primary-button>
