@@ -44,12 +44,9 @@ Route::get('/daftar-surat-warga', 'App\Http\Controllers\DaftarSuratWargaControll
 Route::get('/documents/process/{uuid}', 'App\Http\Controllers\DownloadProcessController@download')->middleware(['auth', 'verified'])->name('documents.process');
 
 Route::get('/proses-surat/{uuid}', 'App\Http\Controllers\ProsesSuratController@view')->middleware(['auth', 'verified'])->name('prosessurat.view');
-Route::get('/ajukansurat/upload', 'AjukanSuratController@upload')->name('ajukansurat.upload'); //route halaman ajukan surat
-Route::post('/documents/final', 'App\Http\Controllers\AjukanSuratController@upload')->middleware(['auth', 'verified'])->name('ajukansurat.upload');
-Route::post('/ajukansurat/upload',[AjukanSuratController::class, 'ajukansurat']); //route ajukan surat dan masuk ke DB
-
-
-
+Route::post('/ajukansurat/upload', 'App\Http\Controllers\AjukanSuratController@upload')->middleware(['auth', 'verified'])->name('ajukansurat.upload');
+//Route::post('/documents/final', 'App\Http\Controllers\AjukanSuratController@upload')->middleware(['auth', 'verified'])->name('ajukansurat.upload');
+//Route::post('/ajukansurat/upload',[AjukanSuratController::class, 'ajukansurat']); //route ajukan surat dan masuk ke DB
 
 
 Route::middleware('auth')->group(function () {

@@ -22,7 +22,7 @@
                         <tr>
                             <td>Surat Keterangan Tidak Mampu</td>
                             <td>
-                                <a href="{{ route('download', 'surat_keterangan_tidak_mampu') }}" class="text-blue-500 hover:text-blue-700" download>
+                                <a href="{{ route('file.download', ['directory' => 'layanan-umum', 'filename' => 'Surat-Keterangan-Tidak-Mampu.doc']) }}" class="text-blue-500 hover:text-blue-700" download>
                                     <x-primary-button>
                                         {{ __('Unduh') }}
                                     </x-primary-button>
@@ -32,7 +32,7 @@
                         <tr>
                             <td>Surat Keterangan Usaha</td>
                             <td>
-                                <a href="{{ route('download', 'surat_keterangan_usaha') }}" class="text-blue-500 hover:text-blue-700" download>
+                                <a href="{{ route('file.download', ['directory' => 'layanan-umum', 'filename' => 'Surat-Keterangan-Usaha.docx']) }}" class="text-blue-500 hover:text-blue-700" download>
                                     <x-primary-button>
                                         {{ __('Unduh') }}
                                     </x-primary-button>
@@ -48,7 +48,7 @@
                         <tr>
                             <td>Formulir Kartu Keluarga</td>
                             <td>
-                                <a href="{{ route('download', 'surat_kartu_keluarga') }}" class="text-blue-500 hover:text-blue-700" download>
+                                <a href="{{ route('file.download', ['directory' => 'layanan-khusus', 'filename' => 'formulir-kartu-keluarga.pdf']) }}" class="text-blue-500 hover:text-blue-700" download>
                                     <x-primary-button>
                                         {{ __('Unduh') }}
                                     </x-primary-button>
@@ -58,7 +58,7 @@
                         <tr>
                             <td>Formulir Permohonan KTP</td>
                             <td>
-                                <a href="{{ route('download', 'surat_permohonan_ktp') }}" class="text-blue-500 hover:text-blue-700" download>
+                                <a href="{{ route('file.download', ['directory' => 'layanan-khusus', 'filename' => 'formulir-permohonan-ktp.pdf']) }}" class="text-blue-500 hover:text-blue-700" download>
                                     <x-primary-button>
                                         {{ __('Unduh') }}
                                     </x-primary-button>
@@ -68,7 +68,7 @@
                         <tr>
                             <td>Surat Keterangan Domisili</td>
                             <td>
-                                <a href="{{ route('download', 'surat_keterangan_domisili') }}" class="text-blue-500 hover:text-blue-700" download>
+                                <a href="{{ route('file.download', ['directory' => 'layanan-khusus', 'filename' => 'surat-keterangan-domisili.doc']) }}" class="text-blue-500 hover:text-blue-700" download>
                                     <x-primary-button>
                                         {{ __('Unduh') }}
                                     </x-primary-button>

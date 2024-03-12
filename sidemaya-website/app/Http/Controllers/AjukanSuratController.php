@@ -2,7 +2,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Document;
-//use App\Models\DokumenWarga;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -17,54 +16,39 @@ class AjukanSuratController extends Controller
         return view('ajukansurat');
     }
 
-
     public function upload(Request $request)
     {
         $request->validate([
-            'file' => 'required|mimes:pdf|max:10240',
+            'file' => 'required|file|mimes:pdf,doc,docx|max:10240',
             'category' => 'required',
-            'nomorsurat' => 'required|string',
         ]);
-
 
         $file=$request->file('file');
 
         if ($file->isValid()){
+            $category = $request->input('category');
 
-            //$document->category=$request->category;
-            $category=$request->input('category');
-            $nomorsurat = $request->input('nomorsurat');
             $uuid = Str::uuid()->toString();
             $filename= $uuid.'.'.$file->getClientOriginalExtension();
 
-            $file->storeAs("files/final/{$category}", $filename, 'private');
+            $file->storeAs("files/proses/{$category}", $filename, 'private');
 
             $document = new Document();
+            $document->uuid = $uuid;
             $document->category = $category;
-            $document->identifier = $nomorsurat;
+            $document->identifier = "";
+            $document->version = "1";
             $document->status = "Proses";
             $document->updated_at = Carbon::now()->format('Y-m-d H:i:s');
             $document->updated_by = Auth::user()->id;
+            $document->created_at = Carbon::now()->toDateTimeString();
+            $document->created_by = Auth::user()->id;
             $document->filename = $filename;
             $document->save();
 
-        return redirect()->back()->with('success', "Dokumen sukses diunggah.");
-    } else {
-            return redirect()->back()->with('error', 'Dokumen gagal diunggah. Sistem hanya mendukung tipe dokumen hanya pdf');
+            return redirect()->back()->with('success', "Dokumen sukses diunggah.");
+        } else {
+            return redirect()->back()->with('error', 'Dokumen gagal diunggah. Sistem hanya mendukung tipe dokumen: doc, docx, dan pdf');
         }
     }
 }
-
-       //$request->file->move('asset',$filename);
-
-       //$data->file=$filename;
-
-       //$data->file=$request->file;
-       //$data->category=$request->category;
-
-       //$data->save();
-
-
-
-    //} else {
-      //  return redirect()->back()->with('error', 'Dokumen gagal diunggah. Sistem hanya mendukung tipe dokumen: doc, docx, dan pdf');

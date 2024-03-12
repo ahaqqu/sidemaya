@@ -47,6 +47,8 @@ class DocumentsFinalController extends Controller
             $originalname = $file->getClientOriginalName();
             $extension = substr($originalname, strrpos($originalname, '.')+1);
             $fileName = $uuid . "." . $extension;
+            //$fileName= $uuid.'.'.$file->getClientOriginalExtension();
+
             $category = $document->category;
             $file->storeAs("files/final/${category}", $fileName, 'private');
 
