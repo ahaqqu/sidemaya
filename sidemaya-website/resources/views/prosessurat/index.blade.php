@@ -63,14 +63,33 @@
                                     echo <<<EOL
                                     <input type="hidden" name="uuid" value="$document->uuid">
                                     EOL;
-                                    @endphp
-                                    <label for="nomorsurat">Nomor Surat</label><br>
-                                    <input type="text" id="nomorsurat" name="nomorsurat" style="color:black;"><br><br>
-                                    <label for="file">Lampirkan Dokumen yang Disetujui</label><br>
-                                    <input type="file" name="file"><br><br>
-                                    <x-primary-button>
-                                        {{ __('Kirim') }}
-                                    </x-primary-button>
+
+                                   if($document->status == "Proses") {
+                                       echo <<<EOL
+                                        <label for="nomorsurat">Nomor Surat</label><br>
+                                        <input type="text" id="nomorsurat" name="nomorsurat" style="color:black;"><br><br>
+                                        <label for="file">Lampirkan Dokumen yang Disetujui</label><br>
+                                        <input type="file" name="file"><br><br>
+
+
+                                        EOL;
+                                    } else {
+                                       echo <<<EOL
+                                        <label for="nomorsurat">Nomor Surat</label><br>
+                                        <input type="text" id="nomorsurat" name="nomorsurat" style="color:black; background-color:lightgrey" readonly value="$document->identifier"><br><br>
+                                        <button onclick="location.href='../documents/final/$document->uuid'" type="button" class="underline rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800">
+                                            Unduh dokumen yang telah disetujui
+                                        </button><br><br>
+                                        EOL;
+                                    }
+
+                                     @endphp
+
+                                    @if ($document->status == "Proses")
+                                     <x-primary-button>
+                                         {{ __('Kirim') }}
+                                     </x-primary-button>
+                                     @endif
                                 </form>
                             </div>
                             @endauth

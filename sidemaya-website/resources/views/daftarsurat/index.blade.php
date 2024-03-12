@@ -108,7 +108,21 @@
                               $("th[data-priority='6'").removeClass("sorting");
                              }, 100);
 
-                        }
+                        },
+                         "language": {
+                             "lengthMenu": "Menampilkan _MENU_ surat",
+                             "zeroRecords": "Tidak ditemukan surat",
+                             "info": "Menampilkan halaman _PAGE_ dari _PAGES_",
+                             "infoEmpty": "Tidak ditemukan surat",
+                             "infoFiltered": "(tersaring dari semua _MAX_ surat)",
+                             "search": "Pencarian:",
+                             "paginate": {
+                                 "first":      "Pertama",
+                                 "last":       "Terakhir",
+                                 "next":       "Lanjut",
+                                 "previous":   "Sebelum"
+                             },
+                         }
 				})
 				.columns.adjust()
 				.responsive.recalc();

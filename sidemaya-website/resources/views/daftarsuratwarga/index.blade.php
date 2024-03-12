@@ -47,7 +47,7 @@
                                        <button onclick="location.href='../documents/process/$document->uuid'" type="button" class="underline rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800">
                                             Unduh
                                         </button>
-                                        &nbsp  &nbsp
+                                        &nbsp
                                        <button onclick="location.href='../proses-surat/$document->uuid'" type="button" class="underline rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800">
                                             Setujui
                                         </button>
@@ -91,7 +91,7 @@
 			var table = $('#example').DataTable({
 					responsive: true,
 					order: [
-                        [0, 'desc']
+                        [0, 'asc']
                     ],
                     initComplete: function () {
                             $(".dataTables_filter").append($("#categoryFilter"));
@@ -126,6 +126,20 @@
                                 $("th[data-priority='8'").removeClass("sorting");
                                }, 100);
 
+                        },
+                        "language": {
+                            "lengthMenu": "Menampilkan _MENU_ surat",
+                            "zeroRecords": "Tidak ditemukan surat",
+                            "info": "Menampilkan halaman _PAGE_ dari _PAGES_",
+                            "infoEmpty": "Tidak ditemukan surat",
+                            "infoFiltered": "(tersaring dari semua _MAX_ surat)",
+                            "search": "Pencarian:",
+                            "paginate": {
+                                "first":      "Pertama",
+                                "last":       "Terakhir",
+                                "next":       "Lanjut",
+                                "previous":   "Sebelum"
+                            },
                         }
 				})
 				.columns.adjust()
