@@ -1,17 +1,19 @@
 <x-app-layout>
 
     <x-slot name="header">
-        <div class="landing-page" style="background-image: url('backgrounds/');">
-            <div class="jumbotron text-center p-5">
-                <h1 class="text-white"><strong>Selamat Datang di Layanan SIDEMAYA</strong></h1>
-                <p class="text-white"><strong>Dapatkan Layanan Desa dengan Mudah Cepat dan Nyaman.
-                        Desa kami adalah desa modern dengan budaya yang memanfaatkan teknologi untuk menjalankan proses bisnis kami.</strong></p>
-                <p class="text-white p-5"><strong>Silakan login untuk mendapatkan layanan</strong></p>
-                <a class="btn btn-warning btn-lg" href="login.php" role="button">Login</a>
-                <a class="btn btn-outline-warning btn-lg" href="Register.php" role="button">Register</a>
+                <!-- Landing Page Section -->
+                <div class="landing-page" style="background-image: url('backgrounds/your-background-image.jpg'); height: 100vh; display: flex; justify-content: center; align-items: center; text-align: center;">
+            <div class="container">
+                <div class="jumbotron text-center p-5">
+                    <h1 class="text-white font-bold text-4xl md:text-6xl">Selamat Datang di Layanan SIDEMAYA</h1>
+                    <p class="text-white mt-4 text-lg md:text-xl">Solusi terpadu yang dirancang untuk mendukung pemerintahan desa, meningkatkan partisipasi masyarakat, dan memfasilitasi berbagai kegiatan di tingkat desa.</p>
+                    <div class="mt-8">
+                        <!-- Button untuk menarik perhatian pengguna, misalnya untuk mengarahkan mereka ke bagian tertentu dari situs -->
+                        <a href="#tentangkami" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition duration-300 ease-in-out">Tentang Kami</a>
+                    </div>
+                </div>
             </div>
         </div>
-        <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-            {{ __('Home') }}
-        </h2>
+        <!-- End of Landing Page Section -->
+
 </x-app-layout>
