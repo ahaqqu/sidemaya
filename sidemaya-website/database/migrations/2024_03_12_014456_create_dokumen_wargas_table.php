@@ -13,9 +13,8 @@ return new class extends Migration
     {
         Schema::create('dokumen_wargas', function (Blueprint $table) {
             $table->id();
-            $table->string('file');
             $table->string('category');
-            $table->string('filename');
+            $table->string('file');
             $table->timestamps();
         });
     }
