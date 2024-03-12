@@ -44,12 +44,9 @@ class DatabaseSeeder extends Seeder
              'nik' => '33333333'
         ]);
 
-
-
-
         $uuid = "a333424d-0cbb-497c-9e8f-fe556f8faef1";
         DB::table('documents')->insert([
-////             'id' => 1,
+             'id' => 1,
              'uuid' => $uuid,
              'identifier' => '01/KU-01/III-2024',
              'version' => '1',
@@ -65,7 +62,7 @@ class DatabaseSeeder extends Seeder
 
         $uuid = "883d5365-f2c7-4f86-8a91-826e9a867e82";
         DB::table('documents')->insert([
-////             'id' => 2,
+             'id' => 2,
              'uuid' => $uuid,
              'identifier' => '',
              'version' => '1',
@@ -81,7 +78,7 @@ class DatabaseSeeder extends Seeder
 
         $uuid = "93ed7790-5249-4760-8579-0efc6f4a6a9d";
         DB::table('documents')->insert([
-//             'id' => 3,
+             'id' => 3,
              'uuid' => $uuid,
              'identifier' => '',
              'version' => '1',
@@ -97,7 +94,7 @@ class DatabaseSeeder extends Seeder
 
         $uuid = "2b07237d-2e5f-463c-988f-b815ec7e19e0";
         DB::table('documents')->insert([
-//             'id' => 4,
+             'id' => 4,
              'uuid' => $uuid,
              'identifier' => '',
              'version' => '1',
@@ -113,7 +110,7 @@ class DatabaseSeeder extends Seeder
 
         $uuid = "46c676a2-9943-4e1b-a6b8-0cd147aa9f87";
         DB::table('documents')->insert([
-//             'id' => 5,
+             'id' => 5,
              'uuid' => $uuid,
              'identifier' => '',
              'version' => '1',
@@ -129,7 +126,7 @@ class DatabaseSeeder extends Seeder
 
         $uuid = "5d4fac7f-4eb2-483f-9bfb-5b1786bb4769 ";
         DB::table('documents')->insert([
-//             'id' => 6,
+             'id' => 6,
              'uuid' => $uuid,
              'identifier' => '',
              'version' => '1',
