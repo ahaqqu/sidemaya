@@ -1,58 +1,102 @@
 <x-app-layout>
-    <x-slot name="header">
-        <h3 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-            {{ __('Formulir Pembuatan Dokumen') }}
-            </h2>
-    </x-slot>
+    <?php
+
+    ?>
     <!--Container-->
 
-    <header class="bg-white dark:bg-gray-800 shadow">
-        <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-            <h3 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-                {{ __('Dokumen Layanan Umum Warga') }}
-                </h3>
-        </div>
-    </header>
-            <ul>
-                <li>Surat Keterangan Tidak Mampu. <a href="{{ route('download', 'surat_keterangan_tidak_mampu') }}" download>Download</a></li>
-                <li>Surat Keterangan Usaha. <a href="{{ route('download', 'surat_keterangan_usaha') }}" download>Download</a></li>
-            </ul>
+    <title>Ajukan Surat</title>
+    <div class="container w-full md:w-4/5 xl:w-3/5  mx-auto px-2">
+
+        <!--Card-->
+        <div id='recipients' class="p-8 mt-6 lg:mt-0 rounded shadow bg-white">
+            <div class="category-filter">
+                <div class="jumbotron text-center">
+                    <h1 class="text-black" style="font-size: 30px;"><strong>Template Surat</strong></h1>
+                </div>
+
+                <br><br>
+
+                <div class="text-black">
+                    <h2><strong>Dokumen Layanan Umum</strong></h2>
+                    <table>
+                        <tr>
+                            <td>Surat Keterangan Tidak Mampu</td>
+                            <td>
+                                <a href="{{ route('download', 'surat_keterangan_tidak_mampu') }}" class="text-blue-500 hover:text-blue-700" download>
+                                    <x-primary-button>
+                                        {{ __('Unduh') }}
+                                    </x-primary-button>
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Surat Keterangan Usaha</td>
+                            <td>
+                                <a href="{{ route('download', 'surat_keterangan_usaha') }}" class="text-blue-500 hover:text-blue-700" download>
+                                    <x-primary-button>
+                                        {{ __('Unduh') }}
+                                    </x-primary-button>
+                                </a>
+                            </td>
+                        </tr>
+                    </table>
+                </div><br><br>
+
+                <div class="text-black">
+                    <h2><strong>Dokumen Layanan Khusus</strong></h2>
+                    <table>
+                        <tr>
+                            <td>Formulir Kartu Keluarga</td>
+                            <td>
+                                <a href="{{ route('download', 'surat_kartu_keluarga') }}" class="text-blue-500 hover:text-blue-700" download>
+                                    <x-primary-button>
+                                        {{ __('Unduh') }}
+                                    </x-primary-button>
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Formulir Permohonan KTP</td>
+                            <td>
+                                <a href="{{ route('download', 'surat_permohonan_ktp') }}" class="text-blue-500 hover:text-blue-700" download>
+                                    <x-primary-button>
+                                        {{ __('Unduh') }}
+                                    </x-primary-button>
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Surat Keterangan Domisili</td>
+                            <td>
+                                <a href="{{ route('download', 'surat_keterangan_domisili') }}" class="text-blue-500 hover:text-blue-700" download>
+                                    <x-primary-button>
+                                        {{ __('Unduh') }}
+                                    </x-primary-button>
+                                </a>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
 
 
+            <br>
 
-        <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-            <h3 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-                {{ __('Dokumen Layanan Administrasi Warga') }}
-                </h3>
-                <ul>
-                    <li>Formulir Kartu Keluarga. <a href="{{ route('download', 'surat_kartu_keluarga') }}" download>Download</a></li>
-                    <li>Formulir Permohonan KTP. <a href="{{ route('download', 'surat_permohonan_ktp') }}" download>Download</a></li>
-                    <li>Surat Keterangan Domisili. <a href="{{ route('download', 'surat_keterangan_domisili') }}" download>Download</a></li>
-        </ul>
-        </div>
+            <div><br><br>
+            </div>
+            </form>
+            <span style="color: red;">*Silahkan mengunduh surat sesuai dengan kebutuhan anda.</span><br><br>
 
 
-    <!--/container-->
+            <style>
+                .form-container {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                }
 
-
-
-
-
-    <!-- jQuery -->
-    <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-
-    <!--Datatables -->
-    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
-    <script>
-        $(document).ready(function() {
-
-            var table = $('#example').DataTable({
-                    responsive: true
-                })
-                .columns.adjust()
-                .responsive.recalc();
-        });
-    </script>
-
+                .form-group {
+                    margin-bottom: 10px;
+                }
+            </style>
 </x-app-layout>

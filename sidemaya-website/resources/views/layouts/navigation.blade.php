@@ -25,7 +25,7 @@
                             {{ __('Ajukan Surat') }}
                         </x-nav-link>
                         <x-nav-link :href="route('templatesurat.view')" :active="request()->routeIs('templatesurat.view')">
-                            {{ __('Format Dokumen Administrasi') }}
+                            {{ __('Template Surat') }}
                         </x-nav-link>
                         @endif
 
