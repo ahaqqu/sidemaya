@@ -1,73 +1,58 @@
 <x-app-layout>
-	<!--Container-->
-	<div class="container w-full md:w-4/5 xl:w-3/5  mx-auto px-2">TESTSET
+    <x-slot name="header">
+        <h3 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
+            {{ __('Formulir Pembuatan Dokumen') }}
+            </h2>
+    </x-slot>
+    <!--Container-->
 
-		<!--Card-->
-		<div id='recipients' class="p-8 mt-6 lg:mt-0 rounded shadow bg-white">
-
-
-			<table id="example" class="stripe hover" style="width:100%; padding-top: 1em;  padding-bottom: 1em;">
-				<thead>
-					<tr>
-						<th data-priority="1">Name</th>
-						<th data-priority="2">Position</th>
-						<th data-priority="3">Office</th>
-						<th data-priority="4">Age</th>
-						<th data-priority="5">Start date</th>
-						<th data-priority="6">Salary</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td>Tiger Nixon</td>
-						<td>System Architect</td>
-						<td>Edinburgh</td>
-						<td>61</td>
-						<td>2011/04/25</td>
-						<td>$320,800</td>
-					</tr>
-
-					<!-- Rest of your data (refer to https://datatables.net/examples/server_side/ for server side processing)-->
-
-					<tr>
-						<td>Donna Snider</td>
-						<td>Customer Support</td>
-						<td>New York</td>
-						<td>27</td>
-						<td>2011/01/25</td>
-						<td>$112,000</td>
-					</tr>
-				</tbody>
-
-			</table>
+    <header class="bg-white dark:bg-gray-800 shadow">
+        <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+            <h3 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
+                {{ __('Dokumen Layanan Umum Warga') }}
+                </h3>
+        </div>
+    </header>
+            <ul>
+                <li>Surat Keterangan Tidak Mampu. <a href="{{ route('download', 'surat_keterangan_tidak_mampu') }}" download>Download</a></li>
+                <li>Surat Keterangan Usaha. <a href="{{ route('download', 'surat_keterangan_usaha') }}" download>Download</a></li>
+            </ul>
 
 
-		</div>
-		<!--/Card-->
+
+        <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+            <h3 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
+                {{ __('Dokumen Layanan Administrasi Warga') }}
+                </h3>
+                <ul>
+                    <li>Formulir Kartu Keluarga. <a href="{{ route('download', 'surat_kartu_keluarga') }}" download>Download</a></li>
+                    <li>Formulir Permohonan KTP. <a href="{{ route('download', 'surat_permohonan_ktp') }}" download>Download</a></li>
+                    <li>Surat Keterangan Domisili. <a href="{{ route('download', 'surat_keterangan_domisili') }}" download>Download</a></li>
+        </ul>
+        </div>
 
 
-	</div>
-	<!--/container-->
+    <!--/container-->
 
 
 
 
 
-	<!-- jQuery -->
-	<script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <!-- jQuery -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 
-	<!--Datatables -->
-	<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
-	<script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
-	<script>
-		$(document).ready(function() {
+    <!--Datatables -->
+    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
+    <script>
+        $(document).ready(function() {
 
-			var table = $('#example').DataTable({
-					responsive: true
-				})
-				.columns.adjust()
-				.responsive.recalc();
-		});
-	</script>
+            var table = $('#example').DataTable({
+                    responsive: true
+                })
+                .columns.adjust()
+                .responsive.recalc();
+        });
+    </script>
 
 </x-app-layout>
