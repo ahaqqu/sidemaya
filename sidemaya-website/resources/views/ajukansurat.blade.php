@@ -1,13 +1,31 @@
 <x-app-layout>
-<?php
-session_start();
+@if (\Session::has('success'))
+        <div class="pt-8">
+            <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+                <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
+                    <div class="p-6 text-gray-900 dark:text-gray-100">
+                        <div class="section">
+                            {!! \Session::get('success') !!}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        @endif
 
-// Menampilkan pop-up notifikasi jika file berhasil diunggah
-if (isset($_SESSION['upload_success']) && $_SESSION['upload_success']) {
-    echo "<script>alert('File berhasil diunggah!');</script>";
-    unset($_SESSION['upload_success']); // Menghapus session setelah notifikasi ditampilkan
-}
-?>
+        @if (\Session::has('error'))
+        <div class="pt-8">
+            <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+                <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
+                    <div class="p-6 text-gray-900 dark:text-gray-100">
+                        <div class="section" style="color:red">
+                            {!! \Session::get('error') !!}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        @endif
 	<!--Container-->
 
     <title>Ajukan Surat</title>
@@ -27,7 +45,7 @@ if (isset($_SESSION['upload_success']) && $_SESSION['upload_success']) {
 </div>
     <!-- Formulir Upload -->
 
-    <form action="{{url('uploadsurat')}}" method="post" enctype="multipart/form-data">
+    <form action="{{route('ajukansurat.upload')}}" method="post" enctype="multipart/form-data">
 @csrf
 <div class="form-container">
         <h2>Jenis Surat</h2><br>
@@ -47,9 +65,9 @@ if (isset($_SESSION['upload_success']) && $_SESSION['upload_success']) {
             <input type="file" name="filename" required class="form-control custom-file-input">
         </div><br>
         <div class="form-group"><br>
-        <x-primary-button>
+        <!--<x-primary-button>
                                          {{ __('Lihat') }}
-                                     </x-primary-button>
+                                     </x-primary-button> -->
         <x-primary-button type="submit">
                                          {{ __('Ajukan Surat') }}
                                      </x-primary-button>

@@ -30,19 +30,22 @@ class AjukanSuratController extends Controller
         $file=$request->file('file');
 
         if ($file->isValid()){
-            $document = new Document();
-            $document->category=$request->category;
-            $category=$request->select('category');
+
+            //$document->category=$request->category;
+            $category=$request->input('category');
             $nomorsurat = $request->input('nomorsurat');
             $uuid = Str::uuid()->toString();
             $filename= $uuid.'.'.$file->getClientOriginalExtension();
 
             $file->storeAs("files/final/{$category}", $filename, 'private');
 
+            $document = new Document();
+            $document->category = $category;
             $document->identifier = $nomorsurat;
             $document->status = "Proses";
             $document->updated_at = Carbon::now()->format('Y-m-d H:i:s');
             $document->updated_by = Auth::user()->id;
+            $document->filename = $filename;
             $document->save();
 
         return redirect()->back()->with('success', "Dokumen sukses diunggah.");

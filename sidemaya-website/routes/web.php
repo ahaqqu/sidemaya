@@ -45,8 +45,9 @@ Route::get('/documents/process/{uuid}', 'App\Http\Controllers\DownloadProcessCon
 
 Route::get('/proses-surat/{uuid}', 'App\Http\Controllers\ProsesSuratController@view')->middleware(['auth', 'verified'])->name('prosessurat.view');
 Route::get('/ajukansurat/upload', 'AjukanSuratController@upload')->name('ajukansurat.upload'); //route halaman ajukan surat
-Route::post('/uploadsurat',[AjukanSuratController::class, 'upload']); //route ajukan surat dan masuk ke DB
-Route::get('/list',[AjukanSuratController::class, 'list']); //route lihat surat yg diajukan
+Route::post('/documents/final', 'App\Http\Controllers\AjukanSuratController@upload')->middleware(['auth', 'verified'])->name('ajukansurat.upload');
+Route::post('/ajukansurat/upload',[AjukanSuratController::class, 'ajukansurat']); //route ajukan surat dan masuk ke DB
+
 
 
 
