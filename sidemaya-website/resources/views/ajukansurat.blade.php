@@ -44,7 +44,7 @@ if (isset($_SESSION['upload_success']) && $_SESSION['upload_success']) {
             <h2><strong>Upload Dokumen</strong></h2>
 
             <div class="form-group">
-            <input type="file" name="file" required class="form-control custom-file-input">
+            <input type="file" name="filename" required class="form-control custom-file-input">
         </div><br>
         <div class="form-group"><br>
         <x-primary-button>

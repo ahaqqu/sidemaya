@@ -1,13 +1,13 @@
 <?php
-
 namespace App\Http\Controllers;
 
 use App\Models\Document;
-use App\Models\DokumenWarga;
+//use App\Models\DokumenWarga;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
+
 
 class AjukanSuratController extends Controller
 {
@@ -22,42 +22,40 @@ class AjukanSuratController extends Controller
         $request->validate([
             'file' => 'required|mimes:pdf|max:10240',
             'category' => 'required',
-            // Sesuaikan dengan jenis file yang diizinkan dan batas ukuran file
         ]);
 
-        $data=new DokumenWarga();
-        $file = $request->file;
-        $originalname=$file->getClientOriginalName();
-        $extension=substr($originalname, strrpos($originalname, '.')+1);
-        $filename= $originalname.'.'.$extension;
+        $document = new Document();
+        $document->category=$request->category;
+        $file=$request->file('file');
+
+        $document->save();
+
+            $uuid = $document->id;
+            $filename= $uuid.'.'.$file->getClientOriginalExtension();
+
+            Storage::disk('storage')->putFileAs('dokumenwarga', $file, $filename);
+
+            //$document->storeAs('dokumenwarga',$filename);
+            $document->file = $filename;
+            $document->status = "Proses";
+            $document->updated_at = Carbon::now()->format('Y-m-d H:i:s');
+            $document->updated_by = Auth::user()->id;
+            $document->save();
+
+        return redirect()->back()->with('success', "Dokumen sukses diunggah.");
+    }
+    }
 
        //$request->file->move('asset',$filename);
-       $file->storeAs('dokumenwarga',$filename);
-       $data->file=$filename;
 
-       $data->file=$request->file;
-       $data->category=$request->category;
+       //$data->file=$filename;
 
-       $data->save();
-       return redirect()->back();
+       //$data->file=$request->file;
+       //$data->category=$request->category;
 
-    }
-
-    public function show()
-    {
-        $data=DokumenWarga::all();
-        return view('listsurat',compact('data'));
-    }
-
-   // if ($file && $file instanceof \Illuminate\Http\UploadedFile) {
-     //   $extension = $file->getClientOriginalExtension();
-       // Lanjutkan dengan logika Anda
-       // $file->move('storage/app/files/dokumenwarga', $extension);
-        //return redirect()->back()->with('success', "Dokumen sukses diunggah.");
-   // } else {
-     //   return redirect()->back()->with('error', 'Dokumen gagal diunggah. Sistem hanya mendukung tipe dokumen: doc, docx, dan pdf');
-    //}
-
-}
+       //$data->save();
 
 
+
+    //} else {
+      //  return redirect()->back()->with('error', 'Dokumen gagal diunggah. Sistem hanya mendukung tipe dokumen: doc, docx, dan pdf');
