@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Document;
+use App\Models\DokumenWarga;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -10,43 +11,44 @@ use Illuminate\Support\Facades\Storage;
 
 class AjukanSuratController extends Controller
 {
-    public function upload(Request $request)
+    public function ajukansurat()
     {
-        // Validate the uploaded file
-        $request->validate([
-            'file' => 'required|file|mimes:pdf,doc,docx|max:10240',
-            //'nomorsurat' => 'required|string',
-            //'uuid' => 'required|string',
+        return view('ajukansurat');
+    }
+    public function surat(Request $Request)
+    {
+        $Request->validate([
+            'filenames' => 'required|mimes:pdf|max:10240',
+            'category' => 'required',
+            // Sesuaikan dengan jenis file yang diizinkan dan batas ukuran file
         ]);
 
-        // Process the uploaded file
-        $file = $request->file('file');
+        $file = $Request->file('filenames');
 
-        if ($file->isValid()) {
-            $nomorsurat = $request->input('nomorsurat');
-            $uuid = $request->input('uuid');
-
-            // Retrieve the document
-            $document = Document::where('uuid', '=', $uuid)->firstOrFail();
-
-            // Set the destination storage path based on category and filename
-            $storagePath = "files/process/{$document->category}/{$document->filename}";
-
-            // Store the file in the private storage disk
-            $file->storeAs($storagePath, $file->getClientOriginalName(), 'private');
-
-            // Update the document
-            $document->identifier = $nomorsurat;
-            $document->status = "Selesai";
-            $document->updated_at = Carbon::now();
-            $document->updated_by = Auth::user()->id;
-            $document->save();
-
-            return redirect()->back()->with('success', "Dokumen sukses diunggah.");
+        // Pastikan file ada dan merupakan instance dari UploadedFile
+        if ($file && $file instanceof \Illuminate\Http\UploadedFile) {
+            $extension = $file->getClientOriginalExtension();
+            // Lanjutkan dengan logika Anda
+            $file->move('storage/app/dokumenwarga', $extension);
         } else {
-            // Menampilkan pop-up kesalahan dan mengarahkan pengguna kembali
-            echo "<script>alert('Hanya file PDF yang diizinkan untuk diunggah.'); history.go(-1);</script>";
-            exit();
+            // Tindakan jika file tidak ditemukan atau bukan instance UploadedFile
+            // (Contohnya, kirim pesan kesalahan, log, atau tindakan lain yang sesuai)
         }
+
+        $data=new DokumenWarga();
+       $file=$Request->file('filenames');
+       $filenames=time().''.$file->getClientOriginalExtension();
+       //$Request->file->move('storage/app/dokumenwarga',$filenames);
+       $data->file=$filenames;
+
+       $data->category=$Request->category;
+       $data->filenames=$Request->filenames;
+
+       $data->save();
+       return redirect()->back();
+
+
     }
+
 }
+

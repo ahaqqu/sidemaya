@@ -31,7 +31,6 @@ Route::get('/document', 'App\Http\Controllers\DocumentController@table')->middle
 Route::get('/template-surat', 'App\Http\Controllers\TemplateSuratController@view')->middleware(['auth', 'verified'])->name('templatesurat.view');
 Route::get('/upload', [FileController::class, 'showForm']);
 Route::post('/upload', [FileController::class, 'uploadFile']);
-Route::post('/ajukansurat', [AjukanSuratController::class, 'upload'])->name('ajukansurat.upload');
 
 
 Route::get('/daftar-surat', 'App\Http\Controllers\DaftarSuratController@view')->middleware(['auth', 'verified'])->name('daftarsurat.view');
@@ -43,8 +42,10 @@ Route::get('/daftar-surat-warga', 'App\Http\Controllers\DaftarSuratWargaControll
 Route::get('/documents/process/{uuid}', 'App\Http\Controllers\DownloadProcessController@download')->middleware(['auth', 'verified'])->name('documents.process');
 
 Route::get('/proses-surat/{uuid}', 'App\Http\Controllers\ProsesSuratController@view')->middleware(['auth', 'verified'])->name('prosessurat.view');
-Route::post('/ajukansurat/upload', 'AjukanSuratController@upload')->name('ajukansurat.upload');
-Route::get('/ajukansurat', [AjukanSuratController::class, 'index']);
+Route::get('/ajukansurat/upload', 'AjukanSuratController@upload')->name('ajukansurat.upload'); //route halaman ajukan surat
+Route::post('/uploadsurat',[AjukanSuratController::class, 'surat']); //route ajukan surat dan masuk ke DB
+
+
 
 
 

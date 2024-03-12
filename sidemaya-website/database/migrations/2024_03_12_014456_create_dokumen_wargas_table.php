@@ -11,9 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('documents', function (Blueprint $table) {
-            $table->uuid();
-
+        Schema::create('dokumen_wargas', function (Blueprint $table) {
+            $table->id();
+            $table->string('file');
+            $table->string('category');
+            $table->string('filename');
+            $table->timestamps();
         });
     }
 
@@ -22,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        //
+        Schema::dropIfExists('dokumen_wargas');
     }
 };

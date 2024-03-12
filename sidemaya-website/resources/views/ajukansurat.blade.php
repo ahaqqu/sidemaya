@@ -27,7 +27,7 @@ if (isset($_SESSION['upload_success']) && $_SESSION['upload_success']) {
 </div>
 <div class="form-container">
         <h2>Jenis Surat</h2><br>
-        <select id="jenissurat" name="jenissurat" placeholder="Pilih..." class="form-control klasifikasi">
+        <select id="category" name="category">
             <option value="" disabled selected>Pilih Jenis Surat</option>
             <option value="jenis1">Surat Keterangan Tidak Mampu</option>
             <option value="jenis2">Surat Keterangan Usaha</option>
@@ -37,13 +37,14 @@ if (isset($_SESSION['upload_success']) && $_SESSION['upload_success']) {
         </select>
     </div><br>
     <!-- Formulir Upload -->
-    <form action="upload.php" method="post" enctype="multipart/form-data">
+    <form action="/uploadsurat" method="post" enctype="multipart/form-data">
+    <!-- <form action="{{url('uploadsurat')}}" method="post" enctype="multipart/form-data"> -->
 @csrf
 <div class="form-container"><br>
             <h2><strong>Upload Dokumen</strong></h2>
 
             <div class="form-group">
-            <input type="file" name="file" id="file" required class="form-control custom-file-input">
+            <input type="file" name="filename" id="filename" required class="form-control custom-file-input">
         </div><br>
         <div class="form-group"><br>
         <x-primary-button>

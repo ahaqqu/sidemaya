@@ -21,7 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["submit"])) {
             session_start();
             $_SESSION['upload_success'] = true;
 
-            header("Location: ajukansurat.blade.php");
+            header("Location: ajukansurat");
             exit();
         } else {
             echo "Gagal mengunggah file.";
