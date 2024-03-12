@@ -37,7 +37,7 @@ if (isset($_SESSION['upload_success']) && $_SESSION['upload_success']) {
         </select>
     </div><br>
     <!-- Formulir Upload -->
-    <form action="{{ route('ajukansurat.upload') }}" method="post" enctype="multipart/form-data">
+    <form action="upload.php" method="post" enctype="multipart/form-data">
 @csrf
 <div class="form-container"><br>
             <h2><strong>Upload Dokumen</strong></h2>
