@@ -50,3 +50,7 @@ From workspace
 - `php artisan make:migration <feature_name>`
 - Modify file at `sidemaya-website/database/migrations`
 - `php artisan migrate`
+
+### Insert Database Seeder
+From workspace 
+- `php artisan db:seed`
