@@ -124,7 +124,7 @@ class DatabaseSeeder extends Seeder
              'created_by' => '2',
         ]);
 
-        $uuid = "5d4fac7f-4eb2-483f-9bfb-5b1786bb4769 ";
+        $uuid = "5d4fac7f-4eb2-483f-9bfb-5b1786bb4769";
         DB::table('documents')->insert([
              'id' => 6,
              'uuid' => $uuid,
@@ -138,6 +138,72 @@ class DatabaseSeeder extends Seeder
              'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
              'created_at' => Carbon::now()->toDateTimeString(),
              'created_by' => '3',
+        ]);
+
+        $uuid = "ad7ed154-bb9a-43ff-a3fb-633150c5d5b2";
+        DB::table('laporan_keuangan')->insert([
+             'id' => 1,
+             'uuid' => $uuid,
+             'filename' => "${uuid}.doc",
+             'created_at' => Carbon::now()->toDateTimeString(),
+             'created_by' => '1',
+             'year' => '2023',
+             'month' => '9',
+        ]);
+
+        $uuid = "b2dacfbb-ab66-4c83-8e46-d1730d8db147";
+        DB::table('laporan_keuangan')->insert([
+             'id' => 2,
+             'uuid' => $uuid,
+             'filename' => "${uuid}.doc",
+             'created_at' => Carbon::now()->toDateTimeString(),
+             'created_by' => '1',
+             'year' => '2023',
+             'month' => '10',
+        ]);
+
+        $uuid = "62359ac9-5bb1-460a-a5e6-24d04c67f4fc";
+        DB::table('laporan_keuangan')->insert([
+             'id' => 3,
+             'uuid' => $uuid,
+             'filename' => "${uuid}.doc",
+             'created_at' => Carbon::now()->toDateTimeString(),
+             'created_by' => '1',
+             'year' => '2023',
+             'month' => '11',
+        ]);
+
+        $uuid = "4423b5e9-9525-470f-b79a-4537f0699f02";
+        DB::table('laporan_keuangan')->insert([
+             'id' => 4,
+             'uuid' => $uuid,
+             'filename' => "${uuid}.doc",
+             'created_at' => Carbon::now()->toDateTimeString(),
+             'created_by' => '1',
+             'year' => '2023',
+             'month' => '12',
+        ]);
+
+        $uuid = "c53855ef-b211-4673-acfb-7fcccae99eab";
+        DB::table('laporan_keuangan')->insert([
+             'id' => 5,
+             'uuid' => $uuid,
+             'filename' => "${uuid}.doc",
+             'created_at' => Carbon::now()->toDateTimeString(),
+             'created_by' => '1',
+             'year' => '2024',
+             'month' => '1',
+        ]);
+
+        $uuid = "c2941ebe-df56-4aac-99c3-1b60d24fda7b";
+        DB::table('laporan_keuangan')->insert([
+             'id' => 6,
+             'uuid' => $uuid,
+             'filename' => "${uuid}.doc",
+             'created_at' => Carbon::now()->toDateTimeString(),
+             'created_by' => '1',
+             'year' => '2024',
+             'month' => '2',
         ]);
     }
 }

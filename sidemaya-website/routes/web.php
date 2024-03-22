@@ -39,6 +39,8 @@ Route::get('/daftar-surat', 'App\Http\Controllers\DaftarSuratController@view')->
 Route::get('/documents/final/{uuid}', 'App\Http\Controllers\DocumentsFinalController@download')->middleware(['auth', 'verified'])->name('documentsfinal.download');
 Route::post('/documents/final', 'App\Http\Controllers\DocumentsFinalController@upload')->middleware(['auth', 'verified'])->name('documentsfinal.upload');
 
+Route::get('/laporan-keuangan', 'App\Http\Controllers\LaporanKeuanganController@view')->middleware(['auth', 'verified'])->name('laporankeuangan.view');
+
 
 Route::get('/daftar-surat-warga', 'App\Http\Controllers\DaftarSuratWargaController@view')->middleware(['auth', 'verified'])->name('daftarsuratwarga.view');
 Route::get('/documents/process/{uuid}', 'App\Http\Controllers\DownloadProcessController@download')->middleware(['auth', 'verified'])->name('documents.process');

@@ -27,8 +27,10 @@
                         <x-nav-link :href="route('templatesurat.view')" :active="request()->routeIs('templatesurat.view')">
                             {{ __('Template Surat') }}
                         </x-nav-link>
+                        <x-nav-link :href="route('laporankeuangan.view')" :active="request()->routeIs('laporankeuangan.view')">
+                            {{ __('Laporan Keuangan') }}
+                        </x-nav-link>
                         @endif
-
                     @endauth
                 </div>
             </div>
