@@ -21,6 +21,18 @@
                             name="password"
                             required autocomplete="current-password" />
 
+            <img src="https://media.geeksforgeeks.org/wp-content/uploads/20210917145551/eye.png" style="
+                                     position: relative;
+                                     height: 30px;
+                                     display: inline;
+                                     margin-top: -35px;
+                                     margin-right: 10px;
+                                     vertical-align: middle;
+                                     width: 40px;
+                                     float: right;
+                                     z-index: 99;
+                                     " id="togglePassword">
+
             <x-input-error :messages="$errors->get('password')" class="mt-2" />
         </div>
 
@@ -45,4 +57,31 @@
             </x-primary-button>
         </div>
     </form>
+
+    <script>
+            const togglePassword =
+                  document.querySelector('#togglePassword');
+
+            const password =
+                  document.querySelector('#password');
+
+            togglePassword.
+            addEventListener('click', function (e) {
+
+                // Toggle the type attribute
+                const type = password.getAttribute(
+                    'type') === 'password' ? 'text' : 'password';
+                password.setAttribute('type', type);
+
+                // Toggle the eye slash icon
+                if (togglePassword.src.match(
+    "https://media.geeksforgeeks.org/wp-content/uploads/20210917150049/eyeslash.png")) {
+                    togglePassword.src =
+    "https://media.geeksforgeeks.org/wp-content/uploads/20210917145551/eye.png";
+                } else {
+                    togglePassword.src =
+    "https://media.geeksforgeeks.org/wp-content/uploads/20210917150049/eyeslash.png";
+                }
+            });
+        </script>
 </x-guest-layout>
