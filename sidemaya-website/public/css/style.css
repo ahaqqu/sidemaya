@@ -11,12 +11,14 @@
     background: white !important;
 }
 
-.bg-white button[type=submit]{
+.bg-white button[type=submit],
+.bg-white button.submit{
     background: green !important;
     color: white;
 }
 
-.bg-white button[type=submit]:hover{
+.bg-white button[type=submit]:hover,
+.bg-white button.submit:hover{
     background: darkgreen !important;
     color: white;
 }

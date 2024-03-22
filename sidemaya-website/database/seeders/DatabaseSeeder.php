@@ -205,5 +205,27 @@ class DatabaseSeeder extends Seeder
              'year' => '2024',
              'month' => '2',
         ]);
+
+        $uuid = "fd64a661-28ec-40e2-85d2-688b25bdc3dd";
+        DB::table('laporan_keuangan')->insert([
+             'id' => 7,
+             'uuid' => $uuid,
+             'filename' => "${uuid}.doc",
+             'created_at' => Carbon::now()->toDateTimeString(),
+             'created_by' => '1',
+             'year' => '2024',
+             'month' => '3',
+        ]);
+
+        $uuid = "3bb9a337-ecc3-4881-8434-bcf9edd1388c";
+        DB::table('laporan_keuangan')->insert([
+             'id' => 8,
+             'uuid' => $uuid,
+             'filename' => "${uuid}.doc",
+             'created_at' => Carbon::now()->toDateTimeString(),
+             'created_by' => '1',
+             'year' => '2024',
+             'month' => '4',
+        ]);
     }
 }
