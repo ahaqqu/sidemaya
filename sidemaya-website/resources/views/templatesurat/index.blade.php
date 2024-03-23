@@ -20,7 +20,7 @@
                     <h2><strong>Dokumen Layanan Umum</strong></h2>
                     <table>
                         <tr>
-                            <td>Surat Keterangan Tidak Mampu</td>
+                            <td width="300px">Surat Keterangan Tidak Mampu</td>
                             <td>
                                 <a href="{{ route('file.download', ['directory' => 'layanan-umum', 'filename' => 'Surat-Keterangan-Tidak-Mampu.doc']) }}" class="text-blue-500 hover:text-blue-700" download>
                                     <x-primary-button>
@@ -46,7 +46,7 @@
                     <h2><strong>Dokumen Layanan Khusus</strong></h2>
                     <table>
                         <tr>
-                            <td>Formulir Kartu Keluarga</td>
+                            <td width="300px">Formulir Kartu Keluarga</td>
                             <td>
                                 <a href="{{ route('file.download', ['directory' => 'layanan-khusus', 'filename' => 'formulir-kartu-keluarga.pdf']) }}" class="text-blue-500 hover:text-blue-700" download>
                                     <x-primary-button>
