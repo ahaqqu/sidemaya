@@ -17,8 +17,10 @@
                 <br><br>
 
                 <div class="text-black">
-                    <h2><strong>Dokumen Layanan Umum</strong></h2>
-                    <table>
+                <table>
+                <tr>
+                <td><h2><strong>Dokumen Layanan Umum</strong></h2></td>
+                </tr>
                         <tr>
                             <td>Surat Keterangan Tidak Mampu</td>
                             <td>
@@ -39,12 +41,14 @@
                                 </a>
                             </td>
                         </tr>
-                    </table>
+
                 </div><br><br>
 
                 <div class="text-black">
-                    <h2><strong>Dokumen Layanan Khusus</strong></h2>
-                    <table>
+                    <tr><td><br><br></td></tr>
+                    <tr>
+                    <td><h2><strong>Dokumen Layanan Khusus</strong></h2></td>
+                    </tr>
                         <tr>
                             <td>Formulir Kartu Keluarga</td>
                             <td>
