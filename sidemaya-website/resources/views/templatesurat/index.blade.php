@@ -3,7 +3,9 @@
 
     ?>
     <!--Container-->
-
+    <head>
+    <link rel="shortcut icon" href="{{ asset('favicon.ico') }}">
+    </head>
     <title>Ajukan Surat</title>
     <div class="container w-full md:w-4/5 xl:w-3/5  mx-auto px-2">
 

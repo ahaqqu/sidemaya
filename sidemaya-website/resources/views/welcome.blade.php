@@ -16,4 +16,8 @@
         </div>
         <!-- End of Landing Page Section -->
 
+        <head>
+    <link rel="shortcut icon" href="{{ asset('favicon.ico') }}">
+    </head>
+
 </x-app-layout>
