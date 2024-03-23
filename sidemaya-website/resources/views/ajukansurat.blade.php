@@ -69,9 +69,8 @@
             </select>
         </div>
         <div class="form-container"><br>
-            <label for="file">Upload Dokumen</label>
+            <label for="file">Unggah Surat / Form</label>
             <input id="file" type="file" name="file" required class="form-control custom-file-input">
-
             <br>
             <div class="form-group"><br>
                 <x-primary-button type="submit">
@@ -82,6 +81,7 @@
         <br><br>
     </div>
 </form>
+<span style="color: red;">*Dokumen dalam bentuk PDF atau gambar dengan format .JPG / .PNG</span>
 <span style="color: red;">*Mohon untuk segera mengambil/mengunduh surat yang sudah selesai agar dapat mengajukan surat lain.</span><br><br>
 
     <style>
