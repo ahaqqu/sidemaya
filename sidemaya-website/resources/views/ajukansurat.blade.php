@@ -105,8 +105,9 @@
             fileNames += input.files[i].name + ', ';
         }
         fileNames = fileNames.slice(0, -2); // Menghapus koma dan spasi terakhir
-        document.getElementById('file-names').textContent = fileNames;
+        document.getElementById('selected-files-info').textContent = fileNames; // Mengubah ID menjadi 'selected-files-info'
     }
 </script>
+
 
 </x-app-layout>
