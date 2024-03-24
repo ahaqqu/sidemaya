@@ -70,13 +70,14 @@
         </div>
         <div class="form-container"><br>
             <label for="file">Unggah Surat / Form</label>
-            <input id="file" type="file" name="file" required class="form-control custom-file-input">
+            <input id="file" type="file" name="file" required class="form-control custom-file-input" multiple>
             <br>
             <div class="form-group"><br>
                 <x-primary-button type="submit">
                     {{ __('Ajukan Surat') }}
                 </x-primary-button>
             </div>
+            <div id="fileList"></div>
         <div>
         <br><br>
     </div>
