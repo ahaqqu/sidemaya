@@ -70,9 +70,10 @@
         </div>
         <div class="form-container"><br>
             <label for="file">Unggah Surat / Form</label>
+            <br><br>
             <input id="file" type="file" name="file" required class="form-control custom-file-input" multiple onchange="displaySelectedFiles(this)">
             <br><br>
-            <div id="selected-files-info"></div>
+            <div id="selected-files-info" style="display: flex; flex-direction: column;"></div>
             <br><br>
             <div class="form-group"><br>
                 <x-primary-button type="submit">
@@ -96,6 +97,16 @@
     .form-group {
         margin-bottom: 10px;
     }
+
+    .file-name {
+    background-color: #e6f4ea; /* Warna hijau muda */
+    color: #666666; /* Warna teks semi abu */
+    border: 1px solid #cccccc; /* Warna border semi abu */
+    padding: 8px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    }
+
 </style>
 
 <script>
@@ -106,10 +117,12 @@
         for (var i = 0; i < input.files.length; i++) {
             var fileName = input.files[i].name;
             var fileNameElement = document.createElement('div');
+            fileNameElement.classList.add('file-name'); // Menambahkan kelas CSS
             fileNameElement.textContent = (i + 1) + '. ' + fileName; // Menambahkan nomor urutan
             fileNamesContainer.appendChild(fileNameElement);
         }
     }
+
 </script>
 
 
