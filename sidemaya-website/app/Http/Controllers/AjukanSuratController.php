@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Http\Controllers;
 
 use App\Models\Document;
@@ -7,7 +8,6 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
-
 
 class AjukanSuratController extends Controller
 {
@@ -18,13 +18,22 @@ class AjukanSuratController extends Controller
 
     public function upload(Request $request)
     {
-        $request->validate([
-            'file' => 'required|file|mimes:pdf,doc,docx|max:10240',
-            'category' => 'required',
-        ]);
-
         $files = $request->file('file');
+
+        $successCount = 0;
+        $errorMessages = [];
+
         foreach ($files as $file) {
+            $validator = validator()->make(['file' => $file], [
+                'file' => 'required|file|mimes:pdf,doc,docx|max:10240',
+                'category' => 'required',
+            ]);
+
+            if ($validator->fails()) {
+                $errorMessages[] = $validator->errors()->first();
+                continue; // Skip to next file if validation fails
+            }
+
             if ($file->isValid()) {
                 $category = $request->input('category');
 
@@ -46,11 +55,16 @@ class AjukanSuratController extends Controller
                 $document->filename = $filename;
                 $document->save();
 
-                return redirect()->back()->with('success', "Dokumen sukses diunggah.");
+                $successCount++;
             } else {
-                return redirect()->back()->with('error', 'Dokumen gagal diunggah. Sistem hanya mendukung tipe dokumen: doc, docx, dan pdf');
+                $errorMessages[] = 'Dokumen gagal diunggah. Sistem hanya mendukung tipe dokumen: doc, docx, dan pdf';
             }
+        }
+
+        if ($successCount > 0) {
+            return redirect()->back()->with('success', "{$successCount} dokumen sukses diunggah.");
+        } else {
+            return redirect()->back()->with('error', implode('<br>', $errorMessages));
         }
     }
 }
-
