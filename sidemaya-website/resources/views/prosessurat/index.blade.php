@@ -1,10 +1,4 @@
 <x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-            {{ __('Persetujuan Surat') }}
-        </h2>
-    </x-slot>
-
     @if (\Session::has('success'))
         <div class="pt-8">
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
@@ -41,10 +35,14 @@
 
     <div class="pt-8">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900 dark:text-gray-100">
                     <div class="section">
-
+                        <div class="jumbotron text-center">
+                            <h1 class="text-black" style="font-size: 30px;"><strong>Laporan Keuangan</strong></h1>
+                        </div>
+                        <br/>
                             @php
                             echo <<<EOL
                                 <button onclick="location.href='../documents/process/$document->uuid'" type="button" class="underline rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800">
@@ -74,10 +72,10 @@
                                        echo <<<EOL
                                         <label for="nomorsurat">Nomor Surat</label><br>
                                         <input type="text" id="nomorsurat" name="nomorsurat" style="color:black;"><br><br>
-                                        <label for="file">Lampirkan Dokumen yang Disetujui</label><br>
-                                        <input type="file" name="file"><br><br>
-
-
+                                        <b><label for="file">Lampirkan Dokumen yang Disetujui</label></b><br>
+                                        <input type="file" name="file" accept=".pdf,.docx,.doc">
+                                        <br>
+                                        <br>
                                         EOL;
                                     } else {
                                        echo <<<EOL
@@ -97,6 +95,9 @@
                                      </x-primary-button>
                                      @endif
                                 </form>
+                                <br><br><div class="section" style="color:red">
+                                    * Dokumen dalam bentuk PDF, DOC, DOCX
+                                </div>
                             </div>
                             @endauth
                         </div>

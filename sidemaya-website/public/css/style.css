@@ -25,6 +25,7 @@
 
 .bg-white label {
     color: black;
+    font-weight: bold;
 }
 
 .bg-white button {
@@ -55,8 +56,6 @@
 .bg-white .forgotpassword:hover {
     color: darkgreen;
 }
-
-
 
 
 div.rounded-md.bg-white a.text-gray-700{

@@ -42,7 +42,7 @@ Route::post('/documents/final', 'App\Http\Controllers\DocumentsFinalController@u
 Route::get('/laporan-keuangan', 'App\Http\Controllers\LaporanKeuanganController@view')->middleware(['auth', 'verified'])->name('laporankeuangan.view');
 Route::get('/laporan-keuangan/{uuid}', 'App\Http\Controllers\LaporanKeuanganController@dokumen')->middleware(['auth', 'verified'])->name('laporankeuangan.dokumen');
 Route::get('/laporan-keuangan/periode/{year}/{month}', 'App\Http\Controllers\LaporanKeuanganController@periode')->middleware(['auth', 'verified'])->name('laporankeuangan.periode');
-
+Route::get('/kelola-laporan-keuangan', 'App\Http\Controllers\LaporanKeuanganController@admin')->middleware(['auth', 'verified'])->name('laporankeuangan.admin');
 
 Route::get('/daftar-surat-warga', 'App\Http\Controllers\DaftarSuratWargaController@view')->middleware(['auth', 'verified'])->name('daftarsuratwarga.view');
 Route::get('/documents/process/{uuid}', 'App\Http\Controllers\DownloadProcessController@download')->middleware(['auth', 'verified'])->name('documents.process');

@@ -6,6 +6,9 @@
 		<div id='recipients' class="p-8 mt-6 lg:mt-0 rounded shadow bg-white">
 
         <div class="category-filter">
+                <div class="jumbotron text-center">
+                    <h1 class="text-black" style="font-size: 30px;"><strong>Laporan Keuangan</strong></h1>
+                </div><br/><br/>
               <select id="categoryFilter" class="form-control">
                 <option value="">Semua</option>
                 <option value="Proses">Proses</option>

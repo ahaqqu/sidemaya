@@ -52,4 +52,20 @@ class LaporanKeuanganController extends Controller
 
         return response()->file($file);
     }
+
+    public function admin()
+    {
+        $documents = DB::table('laporan_keuangan')->distinct()->get()->toArray();
+        $years = array("2024", "2023");
+        $currentmonth = Carbon::now()->month;
+        $currentyear = Carbon::now()->year;
+        $document = LaporanKeuangan::where(['year' => $currentyear, 'month' => $currentmonth])->first();
+        if($document) {
+            $defaultuuid = $document->uuid;
+        } else {
+            $defaultuuid = "NotFound";
+        }
+
+        return view('laporankeuangan.admin', compact('documents', 'currentmonth', 'currentyear', 'years', 'defaultuuid'));
+    }
 }

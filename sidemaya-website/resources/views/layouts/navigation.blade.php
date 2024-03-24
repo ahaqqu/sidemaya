@@ -17,6 +17,9 @@
                         <x-nav-link :href="route('daftarsuratwarga.view')" :active="request()->routeIs('daftarsuratwarga.view')">
                             {{ __('Daftar Surat Warga') }}
                         </x-nav-link>
+                        <x-nav-link :href="route('laporankeuangan.admin')" :active="request()->routeIs('laporankeuangan.admin')">
+                            {{ __('Kelola Laporan Keuangan') }}
+                        </x-nav-link>
                         @else
                         <x-nav-link :href="route('daftarsurat.view')" :active="request()->routeIs('daftarsurat.view')">
                             {{ __('Daftar Surat') }}
