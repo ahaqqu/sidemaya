@@ -43,7 +43,7 @@ class DatabaseSeeder extends Seeder
         User::updateOrInsert(['id' => 3],[
              'id' => 3,
              'name' => "Susi Hoffmann",
-             'email' => 'susi3.hoffmann@gmail.com',
+             'email' => 'susi.hoffmann@gmail.com',
              'password' => Hash::make('password'),
              'nik' => '33333333'
         ]);
