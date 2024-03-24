@@ -70,7 +70,9 @@
         </div>
         <div class="form-container"><br>
             <label for="file">Unggah Surat / Form</label>
-            <input id="file" type="file" name="file" required class="form-control custom-file-input">
+            <input id="file" type="file" name="file" required class="form-control custom-file-input" multiple onchange="displaySelectedFiles(this)">
+            <br>
+            <div id="selected-files-info"></div>
             <br>
             <div class="form-group"><br>
                 <x-primary-button type="submit">
@@ -95,4 +97,16 @@
         margin-bottom: 10px;
     }
 </style>
+
+<script>
+    function displaySelectedFiles(input) {
+        var fileNames = '';
+        for (var i = 0; i < input.files.length; i++) {
+            fileNames += input.files[i].name + ', ';
+        }
+        fileNames = fileNames.slice(0, -2); // Menghapus koma dan spasi terakhir
+        document.getElementById('file-names').textContent = fileNames;
+    }
+</script>
+
 </x-app-layout>
