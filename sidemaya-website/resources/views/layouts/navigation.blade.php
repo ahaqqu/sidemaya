@@ -33,6 +33,9 @@
                         <x-nav-link :href="route('laporankeuangan.view')" :active="request()->routeIs('laporankeuangan.view')">
                             {{ __('Laporan Keuangan') }}
                         </x-nav-link>
+                        <x-nav-link :href="route('kebijakanprivacy.view')" :active="request()->routeIs('kebijakanprivacy.view')">
+                            {{ __('Kebijakan Privacy') }}
+                        </x-nav-link>
                         @endif
                     @endauth
                 </div>
