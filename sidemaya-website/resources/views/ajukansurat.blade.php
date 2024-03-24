@@ -71,9 +71,9 @@
         <div class="form-container"><br>
             <label for="file">Unggah Surat / Form</label>
             <input id="file" type="file" name="file" required class="form-control custom-file-input" multiple onchange="displaySelectedFiles(this)">
-            <br>
+            <br><br>
             <div id="selected-files-info"></div>
-            <br>
+            <br><br>
             <div class="form-group"><br>
                 <x-primary-button type="submit">
                     {{ __('Ajukan Surat') }}
@@ -100,12 +100,15 @@
 
 <script>
     function displaySelectedFiles(input) {
-        var fileNames = '';
+        var fileNamesContainer = document.getElementById('selected-files-info');
+        fileNamesContainer.innerHTML = ''; // Bersihkan isi sebelum menambahkan judul file yang baru
+
         for (var i = 0; i < input.files.length; i++) {
-            fileNames += input.files[i].name + ', ';
+            var fileName = input.files[i].name;
+            var fileNameElement = document.createElement('div');
+            fileNameElement.textContent = (i + 1) + '. ' + fileName; // Menambahkan nomor urutan
+            fileNamesContainer.appendChild(fileNameElement);
         }
-        fileNames = fileNames.slice(0, -2); // Menghapus koma dan spasi terakhir
-        document.getElementById('selected-files-info').textContent = fileNames; // Mengubah ID menjadi 'selected-files-info'
     }
 </script>
 
