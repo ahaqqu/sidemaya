@@ -40,7 +40,7 @@
                 <div class="p-6 text-gray-900 dark:text-gray-100">
                     <div class="section">
                         <div class="jumbotron text-center">
-                            <h1 class="text-black" style="font-size: 30px;"><strong>Laporan Keuangan</strong></h1>
+                            <h1 class="text-black" style="font-size: 30px;"><strong>Proses Surat Warga</strong></h1>
                         </div>
                         <br/>
                             @php

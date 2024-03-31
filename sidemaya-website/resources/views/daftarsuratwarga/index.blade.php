@@ -7,7 +7,7 @@
 
         <div class="category-filter">
                 <div class="jumbotron text-center">
-                    <h1 class="text-black" style="font-size: 30px;"><strong>Laporan Keuangan</strong></h1>
+                    <h1 class="text-black" style="font-size: 30px;"><strong>Daftar Surat Warga</strong></h1>
                 </div><br/><br/>
               <select id="categoryFilter" class="form-control">
                 <option value="">Semua</option>

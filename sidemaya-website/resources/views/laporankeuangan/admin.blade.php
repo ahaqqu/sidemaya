@@ -12,7 +12,7 @@
 
                 <label for="tahun" class="font-bold">Tahun Laporan Keuangan</label>
                 <br/>
-                <select id="tahun" class="">
+                <select id="tahun" style="width:200px" >
                     @foreach ($years as $year)
                         @if ($year == $currentyear)
                             <option value="{{ $year }}" selected>{{ $year }}</option>
@@ -24,7 +24,7 @@
                 <br/><br/>
                 <label for="bulan" class="font-bold">Bulan Laporan Keuangan</label>
                 <br/>
-                <select id="bulan" class="">
+                <select id="bulan" style="width:200px" >
 
                     @php
                         $options = array( 'Januari', 'Februari', 'Maret',
@@ -54,7 +54,7 @@
                 <embed
                   id="embdedpdf"
                   src="../laporan-keuangan/{{ $defaultuuid }}#toolbar=0&navpanes=0&scrollbar=0"
-                  width="100%" height="500" />
+                  width="100%" height="900" />
 
             </div>
 		</div>
