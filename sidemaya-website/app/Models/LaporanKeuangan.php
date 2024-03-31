@@ -9,6 +9,8 @@ class LaporanKeuangan extends Model
 {
     use HasFactory;
     protected $table = 'laporan_keuangan';
+    const UPDATED_AT = null;
+    public $timestamps = false;
     protected $fillable = [
     'id',
     'uuid',

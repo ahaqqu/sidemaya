@@ -148,7 +148,7 @@ class DatabaseSeeder extends Seeder
         LaporanKeuangan::updateOrInsert(['uuid' => $uuid],[
              'id' => 1,
              'uuid' => $uuid,
-             'filename' => "${uuid}.doc",
+             'filename' => "${uuid}.pdf",
              'created_at' => Carbon::now()->toDateTimeString(),
              'created_by' => '1',
              'year' => '2023',
@@ -159,7 +159,7 @@ class DatabaseSeeder extends Seeder
         LaporanKeuangan::updateOrInsert(['uuid' => $uuid],[
              'id' => 2,
              'uuid' => $uuid,
-             'filename' => "${uuid}.doc",
+             'filename' => "${uuid}.pdf",
              'created_at' => Carbon::now()->toDateTimeString(),
              'created_by' => '1',
              'year' => '2023',
@@ -170,7 +170,7 @@ class DatabaseSeeder extends Seeder
         LaporanKeuangan::updateOrInsert(['uuid' => $uuid],[
              'id' => 3,
              'uuid' => $uuid,
-             'filename' => "${uuid}.doc",
+             'filename' => "${uuid}.pdf",
              'created_at' => Carbon::now()->toDateTimeString(),
              'created_by' => '1',
              'year' => '2023',
@@ -181,7 +181,7 @@ class DatabaseSeeder extends Seeder
         LaporanKeuangan::updateOrInsert(['uuid' => $uuid],[
              'id' => 4,
              'uuid' => $uuid,
-             'filename' => "${uuid}.doc",
+             'filename' => "${uuid}.pdf",
              'created_at' => Carbon::now()->toDateTimeString(),
              'created_by' => '1',
              'year' => '2023',
@@ -192,7 +192,7 @@ class DatabaseSeeder extends Seeder
         LaporanKeuangan::updateOrInsert(['uuid' => $uuid],[
              'id' => 5,
              'uuid' => $uuid,
-             'filename' => "${uuid}.doc",
+             'filename' => "${uuid}.pdf",
              'created_at' => Carbon::now()->toDateTimeString(),
              'created_by' => '1',
              'year' => '2024',
@@ -203,7 +203,7 @@ class DatabaseSeeder extends Seeder
         LaporanKeuangan::updateOrInsert(['uuid' => $uuid],[
              'id' => 6,
              'uuid' => $uuid,
-             'filename' => "${uuid}.doc",
+             'filename' => "${uuid}.pdf",
              'created_at' => Carbon::now()->toDateTimeString(),
              'created_by' => '1',
              'year' => '2024',
@@ -214,7 +214,7 @@ class DatabaseSeeder extends Seeder
         LaporanKeuangan::updateOrInsert(['uuid' => $uuid],[
              'id' => 7,
              'uuid' => $uuid,
-             'filename' => "${uuid}.doc",
+             'filename' => "${uuid}.pdf",
              'created_at' => Carbon::now()->toDateTimeString(),
              'created_by' => '1',
              'year' => '2024',
@@ -225,7 +225,7 @@ class DatabaseSeeder extends Seeder
         LaporanKeuangan::updateOrInsert(['uuid' => $uuid],[
              'id' => 8,
              'uuid' => $uuid,
-             'filename' => "${uuid}.doc",
+             'filename' => "${uuid}.pdf",
              'created_at' => Carbon::now()->toDateTimeString(),
              'created_by' => '1',
              'year' => '2024',

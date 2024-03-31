@@ -8,6 +8,8 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use Carbon\Carbon;
 use App\Models\LaporanKeuangan;
+use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class LaporanKeuanganController extends Controller
 {
@@ -67,5 +69,49 @@ class LaporanKeuanganController extends Controller
         }
 
         return view('laporankeuangan.admin', compact('documents', 'currentmonth', 'currentyear', 'years', 'defaultuuid'));
+    }
+
+    public function upload(Request $request)
+    {
+        // Validate the uploaded file
+        $request->validate([
+            'file' => 'required|file|mimes:pdf|max:10240'
+        ]);
+
+        // Process the uploaded file
+        $file = $request->file('file');
+
+        if ($file->isValid()) {
+            $tahun = $request->input('tahun');
+            $bulan = $request->input('bulan');
+
+            $document = LaporanKeuangan::where(['year' => $tahun, 'month' => $bulan])->first();
+            if(!$document) {
+                $document= new LaporanKeuangan();
+            }
+
+            $uuid = Str::uuid()->toString();
+            $fileName = $uuid . ".pdf";
+            $document->uuid = $uuid;
+            $document->created_at = Carbon::now()->toDateTimeString();
+            $document->created_by = Auth::user()->id;
+            $document->filename = $fileName;
+            $document->year = $tahun;
+            $document->month = $bulan;
+            $document->save();
+
+            $file->storeAs("files/laporan-keuangan", $fileName, 'public');
+
+            $options = array( 'Januari', 'Februari', 'Maret',
+                         'April', 'Mei', 'Juni',
+                         'Juli', 'Agustus', 'September',
+                         'Oktober', 'November', 'Desember');
+
+            $bulanstring = $options[$bulan-1];
+            return redirect()->back()->with('success', "Dokumen laporan keuangan " . $bulanstring . " " . $tahun . " sukses diunggah.");
+        } else {
+            return redirect()->back()->with('error', 'Dokumen gagal diunggah. Sistem hanya mendukung tipe dokumen: pdf');
+        }
+
     }
 }

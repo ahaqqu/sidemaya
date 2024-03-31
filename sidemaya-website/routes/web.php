@@ -47,6 +47,8 @@ Route::get('/laporan-keuangan', 'App\Http\Controllers\LaporanKeuanganController@
 Route::get('/laporan-keuangan/{uuid}', 'App\Http\Controllers\LaporanKeuanganController@dokumen')->middleware(['auth', 'verified'])->name('laporankeuangan.dokumen');
 Route::get('/laporan-keuangan/periode/{year}/{month}', 'App\Http\Controllers\LaporanKeuanganController@periode')->middleware(['auth', 'verified'])->name('laporankeuangan.periode');
 Route::get('/kelola-laporan-keuangan', 'App\Http\Controllers\LaporanKeuanganController@admin')->middleware(['auth', 'verified'])->name('laporankeuangan.admin');
+Route::post('/upload-laporan-keuangan', 'App\Http\Controllers\LaporanKeuanganController@upload')->name('laporankeuangan.upload');
+
 
 Route::get('/daftar-surat-warga', 'App\Http\Controllers\DaftarSuratWargaController@view')->middleware(['auth', 'verified'])->name('daftarsuratwarga.view');
 Route::get('/documents/process/{uuid}', 'App\Http\Controllers\DownloadProcessController@download')->middleware(['auth', 'verified'])->name('documents.process');
@@ -77,9 +79,9 @@ Route::post('/layanan-administrasi', 'App\Http\Controllers\UploadController@uplo
 
 Route::get('/ajukansurat', function() {
     return view('ajukansurat');
-})->name('ajukansurat');
+})->middleware(['auth', 'verified'])->name('ajukansurat');
 
-Route::post('/ajukansurat', 'App\Http\Controllers\UploadController@upload')->name('file.upload');
+Route::post('/ajukansurat', 'App\Http\Controllers\UploadController@upload')->middleware(['auth', 'verified'])->name('file.upload');
 
 Route::get('/download/{directory}/{filename}', 'App\Http\Controllers\DownloadController@download')->name('file.download');
 
