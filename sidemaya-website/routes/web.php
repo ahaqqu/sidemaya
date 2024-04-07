@@ -50,8 +50,8 @@ Route::get('/kelola-laporan-keuangan', 'App\Http\Controllers\LaporanKeuanganCont
 Route::post('/upload-laporan-keuangan', 'App\Http\Controllers\LaporanKeuanganController@upload')->name('laporankeuangan.upload');
 
 
-Route::get('/kegiatan', 'App\Http\Controllers\KegiatanController@index')->middleware(['auth', 'verified'])->name('kegiatan.index');
-Route::get('/kegiatan/{id}', 'App\Http\Controllers\KegiatanController@view')->middleware(['auth', 'verified'])->name('kegiatan.view');
+Route::get('/kegiatan', 'App\Http\Controllers\KegiatanController@index')->name('kegiatan.index');
+Route::get('/kegiatan/{id}', 'App\Http\Controllers\KegiatanController@view')->name('kegiatan.view');
 
 
 
