@@ -58,6 +58,29 @@
 }
 
 
+.blog-content {
+    padding: 0 3rem 0 3rem;
+}
+
+.blog-list {
+    padding: 50px 3rem 0 3rem;
+    display: flex;
+    align-items: center;
+}
+
+.blog-list .text {
+    padding-left: 20px;
+}
+
+.blog-content figcaption {
+    display: none;
+}
+
+.blog-content p {
+    margin-bottom: 1.25em;
+    margin-top: 1.25em;
+}
+
 div.rounded-md.bg-white a.text-gray-700{
     color: black;
 }

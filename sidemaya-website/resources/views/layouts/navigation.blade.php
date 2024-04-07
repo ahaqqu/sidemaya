@@ -12,6 +12,9 @@
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link :href="route('kegiatan.index')" :active="request()->routeIs('kegiatan.index')">
+                            {{ __('Info Kegiatan') }}
+                    </x-nav-link>
                     @auth
                         @if (Auth::user()->isAdmin())
                         <x-nav-link :href="route('daftarsuratwarga.view')" :active="request()->routeIs('daftarsuratwarga.view')">

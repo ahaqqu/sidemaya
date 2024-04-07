@@ -14,6 +14,10 @@ use App\Models\User;
 use App\Models\Document;
 use App\Models\LaporanKeuangan;
 
+use Stephenjude\FilamentBlog\Models\Post;
+use Stephenjude\FilamentBlog\Models\Author;
+use Stephenjude\FilamentBlog\Models\Category;
+
 class DatabaseSeeder extends Seeder
 {
 
@@ -231,5 +235,63 @@ class DatabaseSeeder extends Seeder
              'year' => '2024',
              'month' => '4',
         ]);
+
+        Author::updateOrInsert(['id' => 1],[
+             'id' => 1,
+             'name' => 'admin',
+             'email' => 'admin@sidemaya.com',
+             'bio' => '<p>Admin SIDEMAYA</p>',
+             'created_at' => Carbon::now()->toDateTimeString(),
+             'updated_at' => Carbon::now()->toDateTimeString()
+        ]);
+
+        Category::updateOrInsert(['id' => 1],[
+             'id' => 1,
+             'name' => 'Kegiatan',
+             'slug' => 'kegiatan',
+             'description' => '<p>Kegiatan</p>',
+             'is_Visible' => 1,
+             'created_at' => Carbon::now()->toDateTimeString(),
+             'updated_at' => Carbon::now()->toDateTimeString()
+        ]);
+
+        Category::updateOrInsert(['id' => 2],[
+             'id' => 2,
+             'name' => 'Program',
+             'slug' => 'program',
+             'description' => '<p>Program</p>',
+             'is_Visible' => 1,
+             'created_at' => Carbon::now()->toDateTimeString(),
+             'updated_at' => Carbon::now()->toDateTimeString()
+        ]);
+
+        Post::updateOrInsert(['id' => 1],[
+             'id' => 1,
+             'blog_author_id' => 1,
+             'blog_category_id' => 1,
+             'title' => 'Vitamin Anak',
+             'slug' => 'vitamin-anak',
+             'excerpt' => "Tempat: Puskesmas Desa Manud Jaya\nWaktu: 20 April 2024",
+             'banner' => 'blog/01HTVX07NKXGJ1X0ES9T67SESM.png',
+             'content' => '<p><figure data-trix-attachment="{&quot;contentType&quot;:&quot;image/png&quot;,&quot;filename&quot;:&quot;Screenshot 2024-03-31 211425.png&quot;,&quot;filesize&quot;:520334,&quot;height&quot;:578,&quot;href&quot;:&quot;http://localhost/storage/m9gdpCai2YfNvhfszDamJmNSAEGL5mwCGxvJPA6z.png&quot;,&quot;url&quot;:&quot;http://localhost/storage/m9gdpCai2YfNvhfszDamJmNSAEGL5mwCGxvJPA6z.png&quot;,&quot;width&quot;:843}" data-trix-content-type="image/png" data-trix-attributes="{&quot;presentation&quot;:&quot;gallery&quot;}" class="attachment attachment--preview attachment--png"><a href="http://localhost/storage/m9gdpCai2YfNvhfszDamJmNSAEGL5mwCGxvJPA6z.png"><img src="http://localhost/storage/m9gdpCai2YfNvhfszDamJmNSAEGL5mwCGxvJPA6z.png" width="843" height="578"><figcaption class="attachment__caption"><span class="attachment__name">Screenshot 2024-03-31 211425.png</span> <span class="attachment__size">508.14 KB</span></figcaption></a></figure><strong>Tempat:</strong> Puskesmas Desa Manud Jaya<br><strong>Waktu:</strong> 20 April 2024</p><p>Hello</p>',
+             'published_at' => new Carbon('2024-04-07'),
+             'created_at' => Carbon::now()->toDateTimeString(),
+             'updated_at' => Carbon::now()->toDateTimeString()
+        ]);
+
+        Post::updateOrInsert(['id' => 2],[
+             'id' => 2,
+             'blog_author_id' => 1,
+             'blog_category_id' => 1,
+             'title' => 'Pemilu 2024',
+             'slug' => 'pemilu-2024',
+             'excerpt' => "Tempat: Kantor Desa Manud Jaya\nWaktu: 13 Maret 2024",
+             'banner' => 'blog/01HTVZHK976NCTM6JKFCZJRERK.webp',
+             'content' => '<p><figure data-trix-attachment="{&quot;contentType&quot;:&quot;image/webp&quot;,&quot;filename&quot;:&quot;pemilu-2024_1707824465.webp&quot;,&quot;filesize&quot;:32842,&quot;href&quot;:&quot;http://localhost/storage/tNLeh3zNmXvre3CcRn1LoD7oz18nKQR05gT8xBms.webp&quot;,&quot;url&quot;:&quot;http://localhost/storage/tNLeh3zNmXvre3CcRn1LoD7oz18nKQR05gT8xBms.webp&quot;}" data-trix-content-type="image/webp" class="attachment attachment--file attachment--webp"><a href="http://localhost/storage/tNLeh3zNmXvre3CcRn1LoD7oz18nKQR05gT8xBms.webp"><img src="http://localhost/storage/tNLeh3zNmXvre3CcRn1LoD7oz18nKQR05gT8xBms.webp" width="860" height="484"><figcaption class="attachment__caption"><span class="attachment__name">pemilu-2024_1707824465.webp</span> <span class="attachment__size">32.07 KB</span></figcaption></a></figure></p><p>Tempat: Kantor Desa Manud Jaya<br>Waktu: 13 Maret 2024<br><br>Silakan Gunakan Hak Pilih Anda</p>',
+             'published_at' => new Carbon('2024-03-13'),
+             'created_at' => Carbon::now()->toDateTimeString(),
+             'updated_at' => Carbon::now()->toDateTimeString()
+        ]);
+
     }
 }
