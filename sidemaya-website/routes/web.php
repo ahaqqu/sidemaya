@@ -46,8 +46,8 @@ Route::post('/documents/final', 'App\Http\Controllers\DocumentsFinalController@u
 Route::get('/laporan-keuangan', 'App\Http\Controllers\LaporanKeuanganController@view')->middleware(['auth', 'verified'])->name('laporankeuangan.view');
 Route::get('/laporan-keuangan/{uuid}', 'App\Http\Controllers\LaporanKeuanganController@dokumen')->middleware(['auth', 'verified'])->name('laporankeuangan.dokumen');
 Route::get('/laporan-keuangan/periode/{year}/{month}', 'App\Http\Controllers\LaporanKeuanganController@periode')->middleware(['auth', 'verified'])->name('laporankeuangan.periode');
-Route::get('/kelola-laporan-keuangan', 'App\Http\Controllers\LaporanKeuanganController@admin')->middleware(['auth', 'verified'])->name('laporankeuangan.admin');
-Route::post('/upload-laporan-keuangan', 'App\Http\Controllers\LaporanKeuanganController@upload')->name('laporankeuangan.upload');
+Route::get('/kelola-laporan-keuangan', 'App\Http\Controllers\LaporanKeuanganController@admin')->middleware(['auth', 'verified', 'isAdmin'])->name('laporankeuangan.admin');
+Route::post('/upload-laporan-keuangan', 'App\Http\Controllers\LaporanKeuanganController@upload')->middleware(['auth', 'verified', 'isAdmin'])->name('laporankeuangan.upload');
 
 
 Route::get('/kegiatan', 'App\Http\Controllers\KegiatanController@index')->name('kegiatan.index');
@@ -55,7 +55,7 @@ Route::get('/kegiatan/{id}', 'App\Http\Controllers\KegiatanController@view')->na
 
 
 
-Route::get('/daftar-surat-warga', 'App\Http\Controllers\DaftarSuratWargaController@view')->middleware(['auth', 'verified'])->name('daftarsuratwarga.view');
+Route::get('/daftar-surat-warga', 'App\Http\Controllers\DaftarSuratWargaController@view')->middleware(['auth', 'verified', 'isAdmin'])->name('daftarsuratwarga.view');
 Route::get('/documents/process/{uuid}', 'App\Http\Controllers\DownloadProcessController@download')->middleware(['auth', 'verified'])->name('documents.process');
 
 Route::get('/proses-surat/{uuid}', 'App\Http\Controllers\ProsesSuratController@view')->middleware(['auth', 'verified'])->name('prosessurat.view');

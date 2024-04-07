@@ -18,6 +18,7 @@ use Illuminate\Session\Middleware\AuthenticateSession;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
 use Stephenjude\FilamentBlog\BlogPlugin;
+use App\Http\Middleware\IsAdmin;
 
 class AdminPanelProvider extends PanelProvider
 {
@@ -55,6 +56,9 @@ class AdminPanelProvider extends PanelProvider
             ->authMiddleware([
                 Authenticate::class,
             ])
+            ->middleware([
+                 IsAdmin::class,
+             ])
             ->plugin(
                 BlogPlugin::make()
             );

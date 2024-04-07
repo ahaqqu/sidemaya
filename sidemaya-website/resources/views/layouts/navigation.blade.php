@@ -23,6 +23,9 @@
                         <x-nav-link :href="route('laporankeuangan.admin')" :active="request()->routeIs('laporankeuangan.admin')">
                             {{ __('Kelola Laporan Keuangan') }}
                         </x-nav-link>
+                        <a class="menuitem inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium leading-5 text-white dark:text-white hover:text-gray-700 dark:hover:text-gray-300 hover:border-gray-300 dark:hover:border-gray-700 focus:outline-none focus:text-gray-700 dark:focus:text-gray-300 focus:border-gray-300 dark:focus:border-gray-700 transition duration-150 ease-in-out" href="/admin" target="_blank">
+                            Admin
+                        </a>
                         @else
                         <x-nav-link :href="route('daftarsurat.view')" :active="request()->routeIs('daftarsurat.view')">
                             {{ __('Daftar Surat') }}

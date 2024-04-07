@@ -43,7 +43,6 @@ class User extends Authenticatable
         'password' => 'hashed',
     ];
 
-    //TODO https://www.appfinz.com/blogs/laravel-middleware-for-auth-admin-users-roles/
     public function isAdmin(): bool
     {
         return ($this->role === 'ADMIN');
