@@ -54,13 +54,13 @@
 
                     <br><br>
 
-                    <h1 class="text-center text-black" style="font-size: 24px;"><strong>VISI</strong></h1>
-                    <p class="text-center text-green-800 font-bold">Menjadikan Manud Jaya sebagai komunitas digital yang inovatif dan berkembang dengan lingkungan yang sehat dan komunitas yang sehat.</p>
+                    <h1 class="text-center text-black" style="font-size: 30px;"><strong>VISI</strong></h1>
+                    <p class="text-center text-green-800 font-bold" style="font-size: 24px; max-width:800px; margin: auto">Menjadikan Manud Jaya sebagai komunitas digital yang inovatif dan berkembang dengan lingkungan yang sehat dan komunitas yang sehat.</p>
                     <br><br>
 
-                    <h1 class="text-center text-black" style="font-size: 24px;"><strong>MISI</strong></h1>
+                    <h1 class="text-center text-black" style="font-size: 30px;"><strong>MISI</strong></h1>
 
-                    <div class="grid grid-cols-2 gap-8">
+                    <div class="grid grid-cols-2 gap-8"  style="font-size: 24px;max-width:1200px; margin: auto">
                         <div class="col-span-1">
                             <img src="{{ asset('images/Tentang2.png') }}" alt="Header Image" style="width: 100%; height: auto;">
                         </div>
