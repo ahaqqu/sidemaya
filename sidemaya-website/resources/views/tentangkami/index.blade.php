@@ -7,7 +7,7 @@
     <head>
         <link rel="shortcut icon" href="{{ asset('favicon.ico') }}">
     </head>
-    <title>Kebijakan Privacy</title>
+    <title>Tentang Kami</title>
     <div class="container w-full md:w-4/5 xl:w-3/5  mx-auto px-2">
 
         <!--Card-->
@@ -15,6 +15,11 @@
             <div class="category-filter">
 
                 <div class="col-span-1">
+
+                    <div class="container w-full">
+                        <img src="{{ asset('images/Tentang.png') }}" alt="Header Image" style="width: 100%; height: auto;">
+                    </div>
+                    <br>
                     <div class="jumbotron text-center">
                         <h1 class="text-black" style="font-size: 30px;"><strong>Statistik Sidemaya</strong></h1>
                     </div>
