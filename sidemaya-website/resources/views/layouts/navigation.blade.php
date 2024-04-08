@@ -44,6 +44,9 @@
                         </x-nav-link>
                         @endif
                     @endauth
+                    <x-nav-link :href="route('tentangkami.view')" :active="request()->routeIs('tentangkami.view')">
+                            {{ __('Tentang Kami') }}
+                    </x-nav-link>
                 </div>
             </div>
 

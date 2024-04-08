@@ -8,6 +8,7 @@ use App\Http\Controllers\AjukanSuratController;
 use App\Http\Controllers\UploadController;
 use App\Http\Controllers\TemplateSuratController;
 use App\Http\Controllers\KebijakanPrivacyController;
+use App\Http\Controllers\tentangkamicontroller;
 
 
 
@@ -34,6 +35,7 @@ Route::get('/template-surat', 'App\Http\Controllers\TemplateSuratController@view
 Route::get('/download/{file}', 'App\Http\Controllers\TemplateSuratController@download')->name('download');
 
 Route::get('/kebijakan-privacy', 'App\Http\Controllers\KebijakanPrivacyController@view')->middleware(['auth', 'verified'])->name('kebijakanprivacy.view');
+Route::get('/tentang-kami', 'App\Http\Controllers\tentangkamicontroller@view')->name('tentangkami.view');
 
 Route::get('/upload', [FileController::class, 'showForm']);
 Route::post('/upload', [FileController::class, 'uploadFile']);
