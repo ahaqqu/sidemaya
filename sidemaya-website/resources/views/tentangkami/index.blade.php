@@ -22,6 +22,34 @@
                     <br>
                     <div class="jumbotron text-center">
                         <h1 class="text-black" style="font-size: 30px;"><strong>Statistik Sidemaya</strong></h1>
+
+                        <div class="square-container">
+
+                          <div class="box">
+                                <div style="display:block;">
+<svg style="fill:#fff; margin: auto" id="Layer_1" height="75px" viewBox="-2 0 30 30" width="75px" xmlns="http://www.w3.org/2000/svg" data-name="Layer 1"><path d="m7.5 13a4.5 4.5 0 1 1 4.5-4.5 4.505 4.505 0 0 1 -4.5 4.5zm7.5 7a5.006 5.006 0 0 0 -5-5h-5a5.006 5.006 0 0 0 -5 5v4h15zm2.5-11a4.5 4.5 0 1 1 4.5-4.5 4.505 4.505 0 0 1 -4.5 4.5zm1.5 2h-5a4.793 4.793 0 0 0 -.524.053 6.514 6.514 0 0 1 -1.576 2.216 7.008 7.008 0 0 1 5.1 6.731h7v-4a5.006 5.006 0 0 0 -5-5z"></path></svg>
+                                253 <br/>Populasi
+                                </div>
+                          </div>
+                          <div class="box">
+                                <div style="display:block;">
+<svg style="fill:#fff; margin: auto" id="Layer_2" height="75px" viewBox="-2 0 30 30" width="75px" xmlns="http://www.w3.org/2000/svg" data-name="Layer 1"><path d="m12,0C5.383,0,0,5.383,0,12s5.383,12,12,12,12-5.383,12-12S18.617,0,12,0Zm-4,21.164v-2.164c0-.552.449-1,1-1h6c.551,0,1,.448,1,1v2.164c-1.226.537-2.578.836-4,.836s-2.774-.299-4-.836Zm10-1.169v-.995c0-1.654-1.346-3-3-3h-6c-1.654,0-3,1.346-3,3v.995c-2.427-1.826-4-4.73-4-7.995C2,6.486,6.486,2,12,2s10,4.486,10,10c0,3.264-1.573,6.169-4,7.995Zm-6-13.995c-2.206,0-4,1.794-4,4s1.794,4,4,4,4-1.794,4-4-1.794-4-4-4Zm0,6c-1.103,0-2-.897-2-2s.897-2,2-2,2,.897,2,2-.897,2-2,2Z"/></svg>
+                                103 <br/>Pengguna
+                                </div>
+                          </div>
+                                <div class="box">
+                                <div style="display:block;">
+<svg style="fill:#fff; margin: auto" id="Layer_2" height="75px" viewBox="-2 0 30 30" width="75px" xmlns="http://www.w3.org/2000/svg" data-name="Layer 1"><path d="M19.949,5.536,16.465,2.05A6.958,6.958,0,0,0,11.515,0H7A5.006,5.006,0,0,0,2,5V19a5.006,5.006,0,0,0,5,5H17a5.006,5.006,0,0,0,5-5V10.485A6.951,6.951,0,0,0,19.949,5.536ZM18.535,6.95A4.983,4.983,0,0,1,19.316,8H15a1,1,0,0,1-1-1V2.684a5.01,5.01,0,0,1,1.051.78ZM20,19a3,3,0,0,1-3,3H7a3,3,0,0,1-3-3V5A3,3,0,0,1,7,2h4.515c.164,0,.323.032.485.047V7a3,3,0,0,0,3,3h4.953c.015.162.047.32.047.485Z"/></svg>
+                                14 <br/>Layanan
+                                </div>
+                          </div>
+                          <div class="box">
+                                <div style="display:block;">
+<svg style="fill:#fff; margin: auto" id="Layer_2" height="75px" viewBox="-2 0 30 30" width="75px" xmlns="http://www.w3.org/2000/svg" data-name="Layer 1"><path d="M19,3H12.472a1.019,1.019,0,0,1-.447-.1L8.869,1.316A3.014,3.014,0,0,0,7.528,1H5A5.006,5.006,0,0,0,0,6V18a5.006,5.006,0,0,0,5,5H19a5.006,5.006,0,0,0,5-5V8A5.006,5.006,0,0,0,19,3ZM5,3H7.528a1.019,1.019,0,0,1,.447.1l3.156,1.579A3.014,3.014,0,0,0,12.472,5H19a3,3,0,0,1,2.779,1.882L2,6.994V6A3,3,0,0,1,5,3ZM19,21H5a3,3,0,0,1-3-3V8.994l20-.113V18A3,3,0,0,1,19,21Z"/></svg>
+                                21 <br/>Permohonan
+                                </div>
+                          </div>
+                        </div>
                     </div>
 
                     <br><br>

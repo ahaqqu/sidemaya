@@ -1,7 +1,7 @@
 <x-app-layout>
 
     <x-slot name="header">
-    <div class="container w-full">
+    <div class="container w-full header-main">
             <!-- Tambahkan gambar Header.png di sini -->
             <img src="{{ asset('images/Header.png') }}" alt="Header Image" style="width: 100%; height: auto;">
     </div>
