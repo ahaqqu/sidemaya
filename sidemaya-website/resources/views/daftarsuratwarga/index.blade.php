@@ -23,11 +23,10 @@
 						<th data-priority="1">ID Surat</th>
 						<th data-priority="2">Jenis Surat</th>
 						<th data-priority="3">Nomor Surat</th>
-						<th data-priority="4">NIK Pemohon</th>
-						<th data-priority="5">Nama Pemohon</th>
-						<th data-priority="6">Waktu Mohon</th>
-						<th data-priority="7">Status</th>
-						<th data-priority="8"></th>
+						<th data-priority="4">Nama Pemohon</th>
+						<th data-priority="5">Waktu Mohon</th>
+						<th data-priority="6">Status</th>
+						<th data-priority="7"></th>
 					</tr>
 				</thead>
 				<tbody>
@@ -39,7 +38,6 @@
                             @php
                             $created_by = App\Models\User::find($document->created_by);
                             @endphp
-                            <td>{{ $created_by->nik }}</td>
                             <td>{{ $created_by->name }}</td>
                             <td>{{ $document->created_at }}</td>
                             <td>{{ $document->status }}</td>
@@ -126,7 +124,7 @@
 
                                setTimeout(function(){
                                 $("#categoryFilter").val("Proses").change();
-                                $("th[data-priority='8'").removeClass("sorting");
+                                $("th[data-priority='7'").removeClass("sorting");
                                }, 100);
 
                         },
