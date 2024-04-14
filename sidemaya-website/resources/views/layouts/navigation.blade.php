@@ -15,6 +15,9 @@
                     <x-nav-link :href="route('kegiatan.index')" :active="request()->routeIs('kegiatan.index')">
                             {{ __('Info Kegiatan') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('program.index')" :active="request()->routeIs('program.index')">
+                            {{ __('Info Program') }}
+                    </x-nav-link>
                     @auth
                         @if (Auth::user()->isAdmin())
                         <x-nav-link :href="route('daftarsuratwarga.view')" :active="request()->routeIs('daftarsuratwarga.view')">

@@ -55,7 +55,8 @@ Route::post('/upload-laporan-keuangan', 'App\Http\Controllers\LaporanKeuanganCon
 Route::get('/kegiatan', 'App\Http\Controllers\KegiatanController@index')->name('kegiatan.index');
 Route::get('/kegiatan/{id}', 'App\Http\Controllers\KegiatanController@view')->name('kegiatan.view');
 
-
+Route::get('/program', 'App\Http\Controllers\ProgramController@index')->name('program.index');
+Route::get('/program/{id}', 'App\Http\Controllers\ProgramController@view')->name('program.view');
 
 Route::get('/daftar-surat-warga', 'App\Http\Controllers\DaftarSuratWargaController@view')->middleware(['auth', 'verified', 'isAdmin'])->name('daftarsuratwarga.view');
 Route::get('/documents/process/{uuid}', 'App\Http\Controllers\DownloadProcessController@download')->middleware(['auth', 'verified'])->name('documents.process');
